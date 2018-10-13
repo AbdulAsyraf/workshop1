@@ -3,11 +3,7 @@ h2 {
     color:white;
 }
 
-body {
-    background-color:lightblue;
-}
-
-div {
+div.wrapper {
     width: 300px;
     margin: auto;
     border: 1px solid black;
