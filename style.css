@@ -3,8 +3,8 @@ h2 {
     color:white;
 }
 
-div.form-group {
-    background-color: lightcyan;
+div.wrapper {
+    background-color: white;
     padding: 25px 50px 50px 25px;
     border: 1px solid black;
 }
