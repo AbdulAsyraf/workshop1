@@ -16,7 +16,9 @@ div.form-group {
     background-color: white;
 }
 
-input[type=text] {
+input {
     width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
     box-sizing: border-box;
 }
