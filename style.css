@@ -3,9 +3,12 @@ h2 {
     color:white;
 }
 
-div {
+div.form-group {
     background-color: white;
-    padding: 25px 50px 50px 25px;
+    padding-left: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-right: auto;
     border: 1px solid black;
 }
 
