@@ -124,7 +124,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <title>New Application</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <style type="text/css">
         body{ font: 14px sans-serif; }
         .wrapper{width: 350px; padding: 20px; }
