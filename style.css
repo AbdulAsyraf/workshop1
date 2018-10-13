@@ -3,8 +3,11 @@ h2 {
     color:white;
 }
 
-div.wrapper {
-    width: 300px;
-    margin: auto;
+body {
+    background-color:lightblue;
+}
+
+div {
+    padding: 25px 50px 50px 25px;
     border: 1px solid black;
 }
