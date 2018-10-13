@@ -1,6 +1,6 @@
 <?php
 
-require_once "pastiConfig.php";
+require_once "../../configs/pastiConfig.php";
 
 //variable initialisation
 $name = $dob = $mykid = $bc = $address = "";
