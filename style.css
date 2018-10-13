@@ -7,7 +7,7 @@ body {
     background-color:lightblue;
 }
 
-div {
+div.wrapper {
     padding: 25px 50px 50px 25px;
     border: 1px solid black;
 }
