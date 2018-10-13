@@ -7,6 +7,11 @@ h2 {
     color:white;
 }
 
+h1 {
+    background-color:mediumseagreen;
+    color:white;
+}
+
 .wrapper{
     width: 350px;
     padding: 20px;

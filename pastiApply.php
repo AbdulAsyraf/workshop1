@@ -122,12 +122,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
     <meta charset="UTF-8">
     <title>New Application</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-    <style type="text/css">
-        body{ font: 14px sans-serif; }
-        .wrapper{width: 350px; padding: 20px; }
-    </style>
 <body>
 <div class="wrapper">
     <h2>Fill up</h2>
