@@ -16,3 +16,7 @@ div.form-group {
     background-color: white;
 }
 
+input[type=text] {
+    width: 100%;
+    box-sizing: border-box;
+}
