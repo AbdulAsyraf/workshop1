@@ -1,12 +1,10 @@
 h2 {
     background-color:mediumseagreen;
-    padding-left: 50px;
-    padding-right: 50px;
     color:white;
 }
 
-div.wrapper {
-    background-color: lightgrey;
+div.wrapper.p {
+    background-color: rgb(247, 247, 247);
     padding: 25px 50px 50px 25px;
     border: 1px solid black;
 }
