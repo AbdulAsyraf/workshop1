@@ -5,6 +5,9 @@ h2 {
 
 body {
     background-color:lightblue;
+}
+
+div {
     width: 300px;
     margin: auto;
     border: 1px solid black;
