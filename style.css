@@ -1,14 +1,18 @@
+body{
+    font: 16px sans-serif;
+}
+
 h2 {
     background-color:mediumseagreen;
     color:white;
 }
 
+.wrapper{
+    width: 350px;
+    padding: 20px;
+}
+
 div.form-group {
     background-color: white;
-    padding-left: 25px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-right: auto;
-    border: 1px solid black;
 }
 
