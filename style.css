@@ -4,7 +4,7 @@ h2 {
 }
 
 div.wrapper {
-    background-color: lightgrey
+    background-color: lightgrey;
     padding: 25px 50px 50px 25px;
     border: 1px solid black;
 }
