@@ -6,3 +6,9 @@ h2 {
 body {
     background-color:lightblue;
 }
+
+.wrapper {
+    width: 300px;
+    margin: auto;
+    border: 1px solid black;
+}
