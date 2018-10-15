@@ -1,0 +1,29 @@
+body{
+    font: 16px sans-serif;
+}
+
+h2 {
+    background-color:mediumseagreen;
+    color:white;
+}
+
+h1 {
+    background-color:mediumseagreen;
+    color:white;
+}
+
+.wrapper{
+    width: 350px;
+    padding: 20px;
+}
+
+div.form-group {
+    background-color: white;
+}
+
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
