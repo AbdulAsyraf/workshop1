@@ -104,18 +104,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method = "post">
         <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
             <label>IC Number</label>
-            <input type="tel" name="username" class="form-control" maxlength="12" <!--value="<?php echo $username; ?>"-->>
-            <span style="color:red" class="help-block"><?php echo $username_err; ?></span>
+            <input type="tel" name="username" class="form-control" maxlength="12" value="<?php echo $username; ?>">
+            <span class="help-block"><?php echo $username_err; ?></span>
         </div>
         <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
             <label>Password</label>
             <input type="password" name="password" class="form-control" value="<?php echo $password; ?>">
-            <span style="color:red" class="help-block"><?php echo $password_err; ?></span>
+            <span class="help-block"><?php echo $password_err; ?></span>
         </div>
         <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
             <label>Confirm Password</label>
             <input type="password" name="confirm_password" class="form-control" value="<?php echo $confirm_password; ?>">
-            <span style="color:red" class="help-block"><?php echo $confirm_password_err; ?></span>
+            <span class="help-block"><?php echo $confirm_password_err; ?></span>
         </div>
         <div class="form-group">
             <input type="submit" class="btn btn-primary" value="Submit">
