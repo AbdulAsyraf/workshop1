@@ -24,7 +24,7 @@ h1 {
 }
 
 .form-group input{
-    margin-left:20px;
+    float:right;
 }
 
 .form-group .clear{
