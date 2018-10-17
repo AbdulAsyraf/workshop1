@@ -21,6 +21,10 @@ div.form-group {
     background-color: white;
 }
 
+div.help-block {
+    color: red;
+}
+
 input {
     width: 100%;
     padding: 12px 20px;
