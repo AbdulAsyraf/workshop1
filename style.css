@@ -21,17 +21,12 @@ h1 {
     background-color: white;
 }
 
-.form-radio{
-    color: blue;
-}
-
 .help-block {
     color: red;
 }
 
 input {
-    width: 70%;
-    padding: 12px 20px;
+    width: auto;
     margin: 8px 0;
     box-sizing: border-box;
 }
