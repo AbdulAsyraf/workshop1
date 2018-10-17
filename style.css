@@ -17,8 +17,12 @@ h1 {
     padding: 20px;
 }
 
-div.form-group {
+.form-group {
     background-color: white;
+}
+
+.form-radio{
+    color: blue;
 }
 
 .help-block {

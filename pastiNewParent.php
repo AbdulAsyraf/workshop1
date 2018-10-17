@@ -22,10 +22,10 @@ $mothername_err = $mothermykad_err = $motherjob_err = "";
 <div class="wrapper">
     <h2>Fill up</h2>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method = "post">
-        <div class="form-group" >
-            <input type="radio" name= "relation" value="Guardian" checked>Guardian<br>
-            <input type="radio" name= "relation" value="Father" >Father<br>
-            <input type="radio" name= "relation" value="Mother" >Mother<br>
+        <div class="form-radio" >
+            <input type="radio" name= "relation" value="Guardian" checked> Guardian<br>
+            <input type="radio" name= "relation" value="Father" > Father<br>
+            <input type="radio" name= "relation" value="Mother" > Mother<br>
         <div class="form-group <?php echo (!empty($name_err)) ? 'has-error' : ''; ?>">
             <label>Name</label>
             <input type="text" name="fathername" class="form-control" value="<?php echo $name; ?>">
