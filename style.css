@@ -25,6 +25,9 @@ h1 {
 
 .form-group input{
     float:right;
+    width: auto;
+    margin: 8px 0;
+    box-sizing: border-box;
 }
 
 .form-group .clear{
@@ -33,10 +36,4 @@ h1 {
 
 .help-block {
     color: red;
-}
-
-input {
-    width: auto;
-    margin: 8px 0;
-    box-sizing: border-box;
 }
