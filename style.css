@@ -17,8 +17,17 @@ h1 {
     padding: 20px;
 }
 
-.form-group {
+.form-group label{
     background-color: white;
+    float:left;
+}
+
+.form-group input{
+    margin-left:20px;
+}
+
+.form-group .clear{
+    clear:both;
 }
 
 .help-block {
