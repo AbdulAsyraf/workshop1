@@ -13,12 +13,13 @@ h1 {
 }
 
 .wrapper{
-    width: 350px;
+    width: 600px;
     padding: 20px;
 }
 
 .form-group label{
     background-color: white;
+    color:green;
     float:left;
 }
 
