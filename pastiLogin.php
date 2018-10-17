@@ -113,6 +113,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="cheat.css">
+    <style>
+        .wrapper{
+            width: 600px;
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
     <div class="wrapper">
