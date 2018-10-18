@@ -103,7 +103,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </div>
         <div class="form-group <?php echo (!empty($mykid_err)) ? 'has-error' : ''; ?>">
             <label>MyKid</label>
-            <input type="text" name="mykid" class="form-control" value="<?php echo $mykid; ?>">
+            <input type="text" name="mykid" class="form-control" maxlength="12" value="<?php echo $mykid; ?>">
             <span class="help-block"><?php echo $mykid_err; ?></span>
         </div>
         <div class="form-group <?php echo (!empty($bc_err)) ? 'has-error' : ''; ?>">
