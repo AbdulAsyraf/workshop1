@@ -20,6 +20,7 @@ h1 {
 
 .form-group label{
     background-color: white;
+    width: 100px;
     color:green;
 }
 
