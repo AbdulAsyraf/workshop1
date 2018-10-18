@@ -8,6 +8,7 @@ require_once "../../configs/pastiConfig.php";
 
 $name = $mykad = $job = $relation = "";
 $name_err = $mykad_err = $job_err = $relation_err = "";
+$check_filled = "";
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
@@ -47,7 +48,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     if(empty($name_err) && empty($relation_err) && empty($mykad_err) && empty($job_err) && empty($address_err)){
-        $sql = "INSERT INTO adult (mykad, username, name, relation, occupation, address) VALUES (?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO adult (mykad, username, name, relationship, occupation, address) VALUES (?, ?, ?, ?, ?, ?)";
 
         if($stmt = mysqli_prepare($link, $sql)){
             mysqli_stmt_bind_param($stmt, "ssssss", $param_mykad, $param_username, $param_name, $param_relation, $param_job, $param_address);
@@ -60,11 +61,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $param_address = $address;
 
             if(mysqli_stmt_execute($stmt)){
-                $sql2 = "UPDATE users SET filled = 'filled' WHERE username = ?";
+                
+                $sql2 = "SELECT filled from users where username = ?";
                 $stmt2 = mysqli_prepare($link, $sql2);
                 mysqli_stmt_bind_param($stmt2, "s", $param_username);
-                $param_username = $username;
                 mysqli_stmt_execute($stmt2);
+                mysqli_stmt_store_result($stmt2);
+                mysqli_stmt_bind_result($stmt2, $check_filled);
+
+                if($check_filled == "unfilled"){
+                    $sql3 = "UPDATE users SET filled = 'filled' WHERE username = ?";
+                    $stmt3 = mysqli_prepare($link, $sql3);
+                    mysqli_stmt_bind_param($stmt3, "s", $param_username);
+                    mysqli_stmt_execute($stmt3);
+                }                
                 
                 header("location: pastiUserMain.php");
             }
