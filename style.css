@@ -1,5 +1,6 @@
 body{
     font: 16px sans-serif;
+    justify-content: center;
 }
 
 h2 {
@@ -24,7 +25,7 @@ h1 {
 }
 
 .form-group input{
-    float:left;
+    float:right;
     width: auto;
     margin: 8px 0;
     box-sizing: border-box;
