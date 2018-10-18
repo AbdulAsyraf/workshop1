@@ -36,11 +36,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $mykad = trim(($_POST["mykad"]));
     }
 
-    if(empty(trim($_POST["occupation"]))){
+    if(empty(trim($_POST["job"]))){
         $job_err = "Please enter your occupation";
     }
     else{
-        $job = trim($_POST["occupation"]);
+        $job = trim($_POST["job"]);
     }
 
     if(empty(trim($_POST["address"]))){
