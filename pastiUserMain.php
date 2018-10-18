@@ -20,7 +20,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || $_SESSION[
     <div class="page-header">
         <h1>Hi user <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>.</h1>
     </div>
-    <p><input type="button" value="New Application" onclick="location='pastiApply.php'" /></p>
+    <p><input type="button" value="Add Parent or Guardian" onclick="location='pastiNewParent.php'" /></p>
+    <p><input type="button" value="Add Student" onclick="location='pastiApply.php'" /></p>
     <p><a href="pastiLogout.php" class="btn btn-danger">Sign Out</a></p>
 </body>
 </html>

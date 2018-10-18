@@ -6,10 +6,6 @@ $username = $_SESSION["username"];
 
 require_once "../../configs/pastiConfig.php";
 
-$fathername = $fathermykad = $fatherjob = "";
-$fathername_err = $fathermykad_err = $fatherjob_err = "";
-$mothername = $mothermykad = $motherjob = "";
-$mothername_err = $mothermykad_err = $motherjob_err = "";
 $name = $mykad = $job = $relation = "";
 $name_err = $mykad_err = $job_err = $relation_err = "";
 
