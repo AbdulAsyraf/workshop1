@@ -102,17 +102,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <span class="help-block"><?php echo $relation_err; ?></span>
         <div class="form-group <?php echo (!empty($name_err)) ? 'has-error' : ''; ?>">
             <label>Name</label>
-            <input type="text" name="fathername" class="form-control" value="<?php echo $name; ?>">
+            <input type="text" name="name" class="form-control" value="<?php echo $name; ?>">
             <span class="help-block"><?php echo $name_err; ?></span>
         </div>
         <div class="form-group <?php echo (!empty($mykad_err)) ? 'has-error' : ''; ?>">
             <label>MyKad Number</label>
-            <input type="text" name="fathermykad" class="form-control" maxlength="12" value="<?php echo $mykad; ?>">
+            <input type="text" name="mykad" class="form-control" maxlength="12" value="<?php echo $mykad; ?>">
             <span class="help-block"><?php echo $mykad_err; ?></span>
         </div>
         <div class="form-group <?php echo (!empty($job_err)) ? 'has-error' : ''; ?>">
             <label>Occupation</label>
-            <input type="text" name="fatherjob" class="form-control" value="<?php echo $job; ?>">
+            <input type="text" name="job" class="form-control" value="<?php echo $job; ?>">
             <span class="help-block"><?php echo $job_err; ?></span>
         </div>
         <div class="form-group <?php echo (!empty($address_err)) ? 'has-error' : ''; ?>">
