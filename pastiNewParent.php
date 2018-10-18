@@ -51,14 +51,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     if(empty($name_err) && empty($relation_err) && empty($mykad_err) && empty($job_err) && empty($address_err)){
-        $sql = "INSERT INTO adult (mykad, username, name, occupation, address) VALUES (?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO adult (mykad, username, name, relation, occupation, address) VALUES (?, ?, ?, ?, ?, ?)";
 
         if($stmt = mysqli_prepare($link, $sql)){
-            mysqli_stmt_bind_param($stmt, "sssss", $param_mykad, $param_username, $param_name, $param_job, $param_address);
+            mysqli_stmt_bind_param($stmt, "ssssss", $param_mykad, $param_username, $param_name, $param_relation, $param_job, $param_address);
 
             $param_mykad = $mykad;
             $param_username = $username;
             $param_name = $name;
+            $param_relation = $relation;
             $param_job = $job;
             $param_address = $address;
 
@@ -96,9 +97,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <h2>Fill up</h2>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method = "post">
         <div class="form-radio <?php echo (!empty($relation_err)) ? 'has-error' : ''; ?>">
-            <input type="radio" name= "relation" value="guardian"> Guardian<br>
-            <input type="radio" name= "relation" value="father" > Father<br>
-            <input type="radio" name= "relation" value="mother" > Mother<br>
+            <input type="radio" name= "relation" value="Guardian"> Guardian<br>
+            <input type="radio" name= "relation" value="Father" > Father<br>
+            <input type="radio" name= "relation" value="Mother" > Mother<br>
             <span class="help-block"><?php echo $relation_err; ?></span>
         <div class="form-group <?php echo (!empty($name_err)) ? 'has-error' : ''; ?>">
             <label>Name</label>
