@@ -73,7 +73,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $param_relation = $relation;
             $param_job = $job;
             $param_email = $email;
-            $param_phone = $phone
+            $param_phone = $phone;
             $param_address = $address;
 
             if(mysqli_stmt_execute($stmt)){
