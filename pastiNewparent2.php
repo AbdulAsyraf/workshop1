@@ -125,7 +125,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     mysqli_stmt_execute($stmt3);
                 }
 
-                header("location: pastiUserMain.php");9
+                header("location: pastiUserMain.php");
             }
             else{
                 echo "Something went wrong. Please try again later";
