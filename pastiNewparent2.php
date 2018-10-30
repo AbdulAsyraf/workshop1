@@ -159,8 +159,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </div>
 
         <div class="form-group <?php echo (!empty($err_arr[1])) ? 'has-error' : ''; ?>">
-            <label>Number</label>
-            <input type="text" name = "mykad1" minlength="12 maxlength="12" class="form-control" value="<?php echo $mykad1; ?>">
+            <label>MyKad Number</label>
+            <input type="text" name = "mykad1" minlength="12" maxlength="12" class="form-control" value="<?php echo $mykad1; ?>">
             <span class="help-block"><?php echo $err_arr[1]; ?></span>
         </div>
 
@@ -184,8 +184,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </div>
 
         <div class="form-group <?php echo (!empty($err_arr[5])) ? 'has-error' : ''; ?>">
-            <label>Mykad Number</label>
-            <input type="text" name = "mykad2" minlength="12 maxlength="12" class="form-control" value="<?php echo $mykad2; ?>">
+            <label>MyKad Number</label>
+            <input type="text" name = "mykad2" minlength="12" maxlength="12" class="form-control" value="<?php echo $mykad2; ?>">
             <span class="help-block"><?php echo $err_arr[5]; ?></span>
         </div>
 
