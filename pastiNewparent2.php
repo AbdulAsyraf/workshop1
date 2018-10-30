@@ -90,7 +90,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $err_arr[8] = "This field is required";
     }
     else{
-        $address = $_POST["address"];
+        $address = strip_tags($_POST["address"]);
+        //$address = $_POST["address"];
     }
 
     if(empty($err_arr)){
@@ -161,7 +162,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </div>
 
         <div class="form-group <?php echo (!empty($err_arr[1])) ? 'has-error' : ''; ?>">
-            <label>MyKad Number</label>
+            <label>MyKad Number</label>(trim(
             <input type="text" name = "mykad1" minlength="12" maxlength="12" class="form-control" value="<?php echo $mykad1; ?>">
             <span class="help-block"><?php echo $err_arr[1]; ?></span>
         </div>
