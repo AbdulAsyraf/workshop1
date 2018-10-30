@@ -204,10 +204,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <span class="help-block"><?php echo $err_arr[7]; ?></span>
         </div>
 
+        <!--
         <div class="form-group <?php echo (!empty($err_arr[8])) ? 'has-error' : ''; ?>">
             <label>Address</label>
             <textarea name="address" rows="5" cols="40"><?php echo $address;?></textarea>
             <span class="help-block"><?php echo $err_arr[8]; ?></span>
+        </div>
+        -->
+
+        <div class="form-group <?php echo (!empty($err_arr[8])) ? 'has-error' : ''; ?>">
+            <label>Address</label>
+            <input type="text" name="address" class="form-control" value="<?php echo $address; ?>">
+            <span class = "help-block"><?php echo $err_arr[8]; ?></span>
         </div>
 
         <div class="form-group">
