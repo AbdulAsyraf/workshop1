@@ -92,12 +92,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     if(empty($err_arr)){
-        $sql = "insert into parentguardian (name1, mykad1, job1, phone1, name2, mykad2, job2, phone2, address) values (?, ?, ?, ?, ?, ?, ?, ?, ?";
+        $sql = "insert into parentguardian (username, name1, mykad1, job1, phone1, name2, mykad2, job2, phone2, address) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?";
 
         if($stmt = mysqli_prepare($link, $sql)){
 
-            mysqli_stmt_bind_param($stmt, "sssssssss", $param_name1, $param_mykad1, $param_job1, $param_phone1, $param_name2, $param_mykad2, $param_job2, $param_phone2, $param_address);
+            mysqli_stmt_bind_param($stmt, "ssssssssss", $param_username, $param_name1, $param_mykad1, $param_job1, $param_phone1, $param_name2, $param_mykad2, $param_job2, $param_phone2, $param_address);
 
+            $param_username = $username;
             $param_name1 = $name1;
             $param_mykad1 = $mykad1;
             $param_job1 = $job1;
@@ -124,7 +125,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     mysqli_stmt_execute($stmt3);
                 }
 
-                header("location: pastiUserMain.php");
+                header("location: pastiUserMain.php");9
             }
             else{
                 echo "Something went wrong. Please try again later";
