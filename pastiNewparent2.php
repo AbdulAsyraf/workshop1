@@ -131,7 +131,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 header("location: pastiUserMain.php");
             }
             else{
-                echo "Something went wrong. Please try again later";
+                echo ("Error Description: ".mysqli_error($link));
             }
         }
 
