@@ -1,5 +1,7 @@
 <?php
 
+print_r($_POST);
+
 session_start();
 
 $username = $_SESSION["username"];
