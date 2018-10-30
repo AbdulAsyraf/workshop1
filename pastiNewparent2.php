@@ -85,12 +85,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $phone2 = trim($_POST["phone2"]);
     }
 
-    if(empty(trim($_POST["address"]))){
+    if(empty($_POST["address"])){
         //$phone2_err = "This field is required";
         $err_arr[8] = "This field is required";
     }
     else{
-        $address = trim($_POST["address"]);
+        $address = $_POST["address"];
     }
 
     if(empty($err_arr)){
