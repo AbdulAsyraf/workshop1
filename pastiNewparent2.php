@@ -162,7 +162,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </div>
 
         <div class="form-group <?php echo (!empty($err_arr[1])) ? 'has-error' : ''; ?>">
-            <label>MyKad Number</label>(trim(
+            <label>MyKad Number</label>
             <input type="text" name = "mykad1" minlength="12" maxlength="12" class="form-control" value="<?php echo $mykad1; ?>">
             <span class="help-block"><?php echo $err_arr[1]; ?></span>
         </div>
