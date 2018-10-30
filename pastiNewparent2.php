@@ -151,50 +151,52 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <div class="wrapper">
     <h2>Fill up</h2>
     <form action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method = "post">
+        <h3>Father or First Guardian</h3>
         <div class="form-group <?php echo (!empty($err_arr[0])) ? 'has-error' : ''; ?>">
-            <label>Father's or First Guardian's Name</label>
+            <label>Name</label>
             <input type="text" name = "name1" class="form-control" value="<?php echo $name1; ?>">
             <span class="help-block"><?php echo $err_arr[0]; ?></span>
         </div>
 
         <div class="form-group <?php echo (!empty($err_arr[1])) ? 'has-error' : ''; ?>">
-            <label>Father's or First Guardian's Mykad Number</label>
+            <label>Number</label>
             <input type="text" name = "mykad1" minlength="12 maxlength="12" class="form-control" value="<?php echo $mykad1; ?>">
             <span class="help-block"><?php echo $err_arr[1]; ?></span>
         </div>
 
         <div class="form-group <?php echo (!empty($err_arr[2])) ? 'has-error' : ''; ?>">
-            <label>Father's or First Guardian's Occupation</label>
+            <label>Occupation</label>
             <input type="text" name = "job1" class="form-control" value="<?php echo $job1; ?>">
             <span class="help-block"><?php echo $err_arr[2]; ?></span>
         </div>
 
         <div class="form-group <?php echo (!empty($err_arr[3])) ? 'has-error' : ''; ?>">
-            <label>Father's or First Guardian's Phone Number</label>
+            <label>Phone Number</label>
             <input type="tel" name = "phone1" minlength="9" maxlength="11" class="form-control" value="<?php echo $phone1; ?>">
             <span class="help-block"><?php echo $err_arr[3]; ?></span>
         </div>
 
+        <h3>Mother or Second Guardian</h3>
         <div class="form-group <?php echo (!empty($err_arr[4])) ? 'has-error' : ''; ?>">
-            <label>Mother's or Second Guardian's Name</label>
+            <label>Name</label>
             <input type="text" name = "name2" class="form-control" value="<?php echo $name2; ?>">
             <span class="help-block"><?php echo $err_arr[4]; ?></span>
         </div>
 
         <div class="form-group <?php echo (!empty($err_arr[5])) ? 'has-error' : ''; ?>">
-            <label>Mother's or Second Guardian's Mykad Number</label>
+            <label>Mykad Number</label>
             <input type="text" name = "mykad2" minlength="12 maxlength="12" class="form-control" value="<?php echo $mykad2; ?>">
             <span class="help-block"><?php echo $err_arr[5]; ?></span>
         </div>
 
         <div class="form-group <?php echo (!empty($err_arr[6])) ? 'has-error' : ''; ?>">
-            <label>Mother's or Second Guardian's Occupation</label>
+            <label>Occupation</label>
             <input type="text" name = "job2" class="form-control" value="<?php echo $job2; ?>">
             <span class="help-block"><?php echo $err_arr[6]; ?></span>
         </div>
 
         <div class="form-group <?php echo (!empty($err_arr[7])) ? 'has-error' : ''; ?>">
-            <label>Mother's or Second Guardian's Phone Number</label>
+            <label>Phone Number</label>
             <input type="tel" name = "phone2" minlength="9" maxlength="11" class="form-control" value="<?php echo $phone2; ?>">
             <span class="help-block"><?php echo $err_arr[7]; ?></span>
         </div>
