@@ -95,7 +95,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     if(empty($err_arr)){
-        $sql = "insert into parentguardian (username, name1, mykad1, job1, phone1, name2, mykad2, job2, phone2, address) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?";
+        $sql = "insert into parentguardian (username, name1, mykad1, job1, phone1, name2, mykad2, job2, phone2, address) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         if($stmt = mysqli_prepare($link, $sql)){
 
