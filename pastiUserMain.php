@@ -22,6 +22,20 @@ $query = "SELECT "
     <div class="page-header">
         <h1>Hi user <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>.</h1>
     </div>
+
+<?php
+    $query = "SELECT username from users";
+    $result = mysqli_query($query);
+
+    while($row = mysqli_fetch_array($result)){
+        echo "<p>" . $row['username'] . "</p>";
+    }
+    mysqli_close();
+?>
+
+
+
+
     <p><input type="button" value="Add Parent or Guardian" onclick="location='pastiNewParent.php'" /></p>
     <p><input type="button" value="Add Student" onclick="location='pastiNewStudent.php'" /></p>
     <p><a href="pastiLogout.php" class="btn btn-danger">Sign Out</a></p>
