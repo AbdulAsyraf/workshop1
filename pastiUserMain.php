@@ -15,7 +15,7 @@ $query = "SELECT "
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>New Application</title>
+    <title>New Appligvvjhjhcation</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
