@@ -9,18 +9,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || $_SESSION[
     header("location: pastiLogin.php");
     exit;
 }
-
-$filter = mysqli_query($link, "SELECT username from users");
-
-while($row = mysqli_fetch_array($filter, MYSQLI_ASSOC){
 ?>
-
-    <option value = "teacher"><?php echo $row["username"]; ?></option>
-
-<?php
-}
-?>
-
 
 <!DOCTYPE html>
 <html lang="en">
