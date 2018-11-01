@@ -10,8 +10,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || $_SESSION[
     exit;
 }
 
-?>
-<?php
 $filter = mysqli_query($link, "SELECT username from users");
 
 while($row = mysqli_fetch_array($filter, MYSQLI_ASSOC){
@@ -20,7 +18,6 @@ while($row = mysqli_fetch_array($filter, MYSQLI_ASSOC){
     <option value = "teacher"><?php echo $row["username"]; ?></option>
 
 <?php
-
 }
 ?>
 
