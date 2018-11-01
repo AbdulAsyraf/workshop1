@@ -11,18 +11,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || $_SESSION[
 }
 
 ?>
-<?php
-$filter = mysqli_query($link, "SELECT username from users");
 
-while($row = mysqli_fetch_array($filter, MYSQLI_ASSOC){
-?>
-
-    <option value = "teacher"><?php echo $row["name"]; ?></option>
-
-<?php
-
-}
-?>
 
 
 <!DOCTYPE html>
@@ -36,7 +25,18 @@ while($row = mysqli_fetch_array($filter, MYSQLI_ASSOC){
     <div class="page-header">
         <h1>Hi admin <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>.</h1>
     </div>
-    
+    <?php
+$filter = mysqli_query($link, "SELECT username from users");
+
+while($row = mysqli_fetch_array($filter, MYSQLI_ASSOC){
+?>
+
+    <option value = "teacher"><?php echo $row["name"]; ?></option>
+
+<?php
+
+}
+?>
     <p>
         <a href="pastiLogout.php" class="btn btn-danger">Sign Out</a>
     </p>
