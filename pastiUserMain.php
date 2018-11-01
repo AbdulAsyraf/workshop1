@@ -7,6 +7,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || $_SESSION[
     header("location: pastiLogin.php");
     exit;
 }
+
+$query = "SELECT "
 ?>
 
 <!DOCTYPE html>

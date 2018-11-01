@@ -6,8 +6,8 @@ $username = $_SESSION["username"];
 
 require_once "../../configs/pastiConfig.php";
 
-$name = $mykad = $job = $relation = "";
-$name_err = $mykad_err = $job_err = $relation_err = "";
+$name = $mykad = $job = $relation = $email = $phone = "";
+$name_err = $mykad_err = $job_err = $relation_err = $email_err = $phone_err = "";
 $check_filled = "";
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -40,6 +40,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $job = trim($_POST["job"]);
     }
 
+    if(empty(trim($_POST["email"]))){
+        $email_err = "Please enter your email address";
+    }
+    else{
+        $email = trim($_POST["email"]);
+    }
+
+    if(empty(trim($_POST["phone"]))){
+        $phone_err = "Please enter your phone number";
+    }
+    else{
+        $phone = trim($_POST["phone"]);
+    }
+
     if(empty(trim($_POST["address"]))){
         $address_err = "Please enter your address";
     }
@@ -47,17 +61,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $address = trim($_POST["address"]);
     }
 
-    if(empty($name_err) && empty($relation_err) && empty($mykad_err) && empty($job_err) && empty($address_err)){
-        $sql = "INSERT INTO adult (mykad, username, name, relationship, occupation, address) VALUES (?, ?, ?, ?, ?, ?)";
+    if(empty($name_err) && empty($relation_err) && empty($mykad_err) && empty($job_err) && empty($email_err) && empty($address_err) && empty($phone_err)){
+        $sql = "INSERT INTO adult (mykad, username, name, relationship, occupation, email, phone, address) VALUES (?, ?, ?, ?, ?, ?, ?, ?";
 
         if($stmt = mysqli_prepare($link, $sql)){
-            mysqli_stmt_bind_param($stmt, "ssssss", $param_mykad, $param_username, $param_name, $param_relation, $param_job, $param_address);
+            mysqli_stmt_bind_param($stmt, "ssssss", $param_mykad, $param_username, $param_name, $param_relation, $param_job, $param_email, $param_phone, $param_address);
 
             $param_mykad = $mykad;
             $param_username = $username;
             $param_name = $name;
             $param_relation = $relation;
             $param_job = $job;
+            $param_email = $email;
+            $param_phone = $phone;
             $param_address = $address;
 
             if(mysqli_stmt_execute($stmt)){
@@ -116,6 +132,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <label>MyKad Number</label>
             <input type="text" name="mykad" class="form-control" maxlength="12" value="<?php echo $mykad; ?>">
             <span class="help-block"><?php echo $mykad_err; ?></span>
+        </div>
+        <div class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
+            <label>Email Address</label>
+            <input type="email" name="email" class="form-control" value="<?php echo $email; ?>">
+            <span class="help-block"><?php echo $email_err; ?></span>
+        </div>
+        <div class="form-group <?php echo (!empty($phone_err)) ? 'has-error' : ''; ?>">
+            <label>Phone Number</label>
+            <input type="tel" name="phone" minlength="9" maxlength="11" class="form-control" value="<?php echo $phone; ?>">
+            <span class="help-block"><?php echo $phone_err; ?></span>
         </div>
         <div class="form-group <?php echo (!empty($job_err)) ? 'has-error' : ''; ?>">
             <label>Occupation</label>

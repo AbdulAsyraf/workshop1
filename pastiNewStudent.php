@@ -6,7 +6,7 @@ $username = $_SESSION["username"];
 
 require_once "../../configs/pastiConfig.php";
 
-$name = $dob = $mykid = $bc = $address = "";
+$name = $dob = $mykid = $bc = $address = $illness = $allergy = "";
 $name_err = $dob_err = $mykid_err = $bc_err = $address_err = "";
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -49,10 +49,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     if(empty($name_err) && empty($dob_err) && empty($mykid_err) && empty($bc_err) && empty($address_err)){
 
-        $sql = "INSERT INTO student (mykid, username, name, dob, bc, address) VALUES (?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO student (mykid, username, name, dob, bc, address, illness, allergy) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
         if($stmt = mysqli_prepare($link, $sql)){
-            mysqli_stmt_bind_param($stmt, "ssssss", $param_mykid, $param_username, $param_name, $param_dob, $param_bc, $param_address);
+            mysqli_stmt_bind_param($stmt, "ssssss", $param_mykid, $param_username, $param_name, $param_dob, $param_bc, $param_address, $param_illness, $param_allergy);
 
             $param_mykid = $mykid;
             $param_username = $username;
@@ -60,6 +60,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $param_dob = $dob;
             $param_bc = $bc;
             $param_address = $address;
+
+            if(empty(trim($_POST["illness"]))){
+                $param_illness = "NULL";
+            }
+            else{
+                $param_illness = trim($_POST["illness"]);
+            }
+
+            if(empty(trim($_POST["allergy"]))){
+                $param_allergy = "NULL";
+            }
+            else{
+                $param_allergy = trim($_POST["allergy"]);
+            }
 
             if(mysqli_stmt_execute($stmt)){
                 header("location: pastiUserMain.php");
@@ -115,6 +129,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <label>Address</label>
             <input type="text" name="address" class="form-control" value="<?php echo $address; ?>">
             <span class="help-block"><?php echo $address_err; ?></span>
+        </div>
+        <div class="form-group">
+            <label>Illness (if any)</label>
+            <input type="text" name="illness" class="form-control" value="<?php echo $illness; ?>">
+        </div>
+        <div class="form-group">
+            <label>Allergies (if any)</label>
+            <input type="text" name="allergy" class="form-control" value="<?php echo $allergy; ?>">
         </div>
         <div class="form-group">
             <input type="submit" class="btn btn-primary" value="Submit">
