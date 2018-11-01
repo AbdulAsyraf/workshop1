@@ -15,7 +15,7 @@ $query = "SELECT "
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>New Appligvvjhjhcation</title>
+    <title>New Application</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -24,6 +24,7 @@ $query = "SELECT "
     </div>
 
 <?php
+    require_once "../../configs/pastiConfig.php";
     $query = "SELECT username from users";
     $result = mysqli_query($link, $query);
 
