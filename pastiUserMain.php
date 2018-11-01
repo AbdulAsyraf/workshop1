@@ -8,7 +8,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || $_SESSION[
     exit;
 }
 
-$query = "SELECT "
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +23,6 @@ $query = "SELECT "
     </div>
 
 <?php
-    require_once "../../configs/pastiConfig.php";
     $query = "SELECT username from users";
     $result = mysqli_query($link, $query);
 
