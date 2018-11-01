@@ -1,5 +1,7 @@
 <?php
 
+require_once "../../configs/pastiConfig.php";
+
 session_start();
 
 //check for logged in status
@@ -7,7 +9,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || $_SESSION[
     header("location: pastiLogin.php");
     exit;
 }
+
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,6 +25,19 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || $_SESSION[
     <div class="page-header">
         <h1>Hi admin <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>.</h1>
     </div>
+    <?php
+$filter = mysqli_query($link, "SELECT name from users");
+$menu = "";
+
+while($row = mysqli_fetch_array($filter, MYSQLI_ASSOC){
+?>
+
+    <option value = "teacher"><?php echo $row["name"]; ?></option>
+
+<?php
+
+}
+?>
     <p>
         <a href="pastiLogout.php" class="btn btn-danger">Sign Out</a>
     </p>
