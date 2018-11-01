@@ -25,12 +25,12 @@ $query = "SELECT "
 
 <?php
     $query = "SELECT username from users";
-    $result = mysqli_query($query);
+    $result = mysqli_query($link, $query);
 
-    while($row = mysqli_fetch_array($result)){
+    while($row = mysqli_fetch_array($link, $result)){
         echo "<p>" . $row['username'] . "</p>";
     }
-    mysqli_close();
+    mysqli_close($link);
 ?>
 
 
