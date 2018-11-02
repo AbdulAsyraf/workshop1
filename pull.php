@@ -7,7 +7,7 @@
     echo "2";
     $result = mysqli_query($link, $sql);
     echo "3";
-    $row = mysqli_fetch_array($result, MYSQLI_NUM);
+    $row = mysqli_fetch_array($result);
     echo "4";
     echo. $row[0]);
     echo "5";
