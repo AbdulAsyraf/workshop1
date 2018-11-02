@@ -8,7 +8,7 @@
     $result = mysqli_query($link, $sql);
     echo "3";
     $row = mysqli_fetch_array($result, MYSQLI_NUM);
-    echo "4";
+    /*echo "4";
     echo. $row["username"]);
     echo "5";
     mysqli_free_result($result);
