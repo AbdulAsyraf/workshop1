@@ -16,8 +16,23 @@
 
 
 ?>
-<html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Stuff</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        .wrapper{
+            width: 600px;
+            padding: 20px;
+        }
+    </style>
+</head>
 <body>
-    <h1>hi</h1>
+    <p>This is a test page</p>
 </body>
 </html>
