@@ -5,7 +5,7 @@
     $sql = "SELECT username, name1 from parentguardian;";
     $result = mysqli_query($link, $sql);
     
-    echo "<table border="1">
+    echo "<table border='1'>
             <tr>
                 <th>Username</th>
                 <th>Name</th>
