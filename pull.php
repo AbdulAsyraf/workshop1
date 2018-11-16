@@ -5,7 +5,7 @@
     $sql = "SELECT username, name1 from parentguardian;";
     $result = mysqli_query($link, $sql);
     
-    echo "<table border='1'>
+    echo "<table border='1' width='400'>
             <tr>
                 <th>Username\t</th>
                 <th>Name\t</th>
@@ -13,8 +13,8 @@
 
     while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
         echo "<tr>";
-        echo "<td>" . $row["username"] . "</td>";
-        echo "<td>" . $row["name1"] . "</td>";
+        echo "<td width='30%'>" . $row["username"] . "</td>";
+        echo "<td width='70%'>" . $row["name1"] . "</td>";
         echo "</tr>";
     }
 
