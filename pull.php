@@ -7,8 +7,8 @@
     
     echo "<table border='1'>
             <tr>
-                <th>Username</th>
-                <th>Name</th>
+                <th>Username\t</th>
+                <th>Name\t</th>
             </tr>";
 
     while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
@@ -44,10 +44,5 @@
 </head>
 <body>
     <p>This is a test page</p>
-    <table border="1">
-        <tr>
-            <th>Username</th>
-            <th>Name</th>
-        </tr>
 </body>
 </html>
