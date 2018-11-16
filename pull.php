@@ -13,9 +13,9 @@
 
     while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
         echo "<tr>";
-        echo "<td width='20%'>" . $row["a.username"] . "</td>";
-        echo "<td width='60%'>" . $row["a.name1"] . "</td>";
-        echo "<td width='20%'>" . $row["b.usertype"] . "</td>";
+        echo "<td width='20%'>" . $row["username"] . "</td>";
+        echo "<td width='60%'>" . $row["name1"] . "</td>";
+        echo "<td width='20%'>" . $row["usertype"] . "</td>";
         echo "</tr>";
     }
 
