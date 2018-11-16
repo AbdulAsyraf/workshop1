@@ -7,8 +7,8 @@
     
     echo "<table border='1' width='400'>
             <tr>
-                <th>Username\t</th>
-                <th>Name\t</th>
+                <th>Username</th>
+                <th>Name</th>
             </tr>";
 
     while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
