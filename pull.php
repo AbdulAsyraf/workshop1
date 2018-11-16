@@ -2,15 +2,24 @@
 
     require_once "../../configs/pastiConfig.php";
 
-    echo "1";
-    $sql = "SELECT username from users;";
-    echo "2";
+    $sql = "SELECT username, name1 from parentguardian;";
     $result = mysqli_query($link, $sql);
-    echo "3";
-    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-    echo "4";
     
-    echo "5";
+    echo "<table border="1">
+            <tr>
+                <th>Username</th>
+                <th>Name</th>
+            </tr>";
+
+    while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+        echo "<tr>";
+        echo "<td>" . $row["username"] . "</td>";
+        echo "<td>" . $row["name1"] . "</td>";
+        echo "</tr>";
+    }
+
+    echo "</table>";
+    
     mysqli_free_result($result);
     mysqli_close($link);
 
@@ -35,5 +44,10 @@
 </head>
 <body>
     <p>This is a test page</p>
+    <table border="1">
+        <tr>
+            <th>Username</th>
+            <th>Name</th>
+        </tr>
 </body>
 </html>
