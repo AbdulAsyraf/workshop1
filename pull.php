@@ -2,7 +2,7 @@
 
     require_once "../../configs/pastiConfig.php";
 
-    $sql = "SELECT username, name1 from parentguardian;";
+    $sql = "SELECT a.username, a.name1, b.usertype from parentguardian a, users b where a.username = b.username;";
     $result = mysqli_query($link, $sql);
     
     echo "<table border='1' width='400'>
@@ -13,8 +13,9 @@
 
     while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
         echo "<tr>";
-        echo "<td width='30%'>" . $row["username"] . "</td>";
-        echo "<td width='70%'>" . $row["name1"] . "</td>";
+        echo "<td width='20%'>" . $row["a.username"] . "</td>";
+        echo "<td width='60%'>" . $row["a.name1"] . "</td>";
+        echo "<td width='20%'>" . $row["b.usertype"] . "</td>";
         echo "</tr>";
     }
 
