@@ -6,13 +6,11 @@
 
     if(isset($_POST["deletion"])){
         $target = $_POST['choice'];
-        echo "hell0";
         echo $target;
-        echo "heya";
-        //$sql = "DELETE FROM student WHERE mykid = '".$target."';";
-        //mysqli_query($link, $sql);
-        //mysqli_close($link);
-        //header("location: pastiUserMain.php");
+        $sql = "DELETE FROM student WHERE mykid = '".$target."';";
+        mysqli_query($link, $sql);
+        mysqli_close($link);
+        header("location: pastiUserMain.php");
         unset($_POST["deletion"]);
     }
 ?>
