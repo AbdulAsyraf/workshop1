@@ -16,7 +16,7 @@
     <div class="page=header">
         <h1>Please choose which student to edit</h1>
     </div>
-    <form action="pastiEditStudent.php" method="post">
+    <form action="pastiEditStudent2.php" method="post">
         <?php
             $username = $_SESSION["username"];
             $query = "SELECT name, mykid FROM student WHERE username = '" .$username."'";
