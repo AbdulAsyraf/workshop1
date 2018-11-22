@@ -8,28 +8,7 @@
 
     $err_arr = [];
 
-    if(isset($_POST["request"])){
-        $mykid = $_POST["choice"];
-        $query = "SELECT name, dob, bc, address, illness, allergy FROM student WHERE mykid = '".$mykid."'";
-        $result = mysqli_query($link, $query);
-        
-        $row = mysqli_fetch_assoc($result);
-        $name = $row["name"];
-        $dob =$row["dob"];
-        $bc = $row["bc"];
-        $address = $row["address"];
-        if($row["illness"] == NULL)
-            $illness = NULL;
-        else
-            $illness = $row["illness"];
-
-        if($row["allergy"] == NULL)
-            $allergy = NULL;
-        else
-            $allergy =$row["allergy"];
-
-    }
-    else if(isset($_POST["update"])){
+    if(isset($_POST["update"])){
         
         if(empty(trim($_POST["name"]))){
             $err_arr[0] = "Please enter student's name";
@@ -104,6 +83,27 @@
             }
 
         }
+    }
+    else if(isset($_POST["request"])){
+        $mykid = $_POST["choice"];
+        $query = "SELECT name, dob, bc, address, illness, allergy FROM student WHERE mykid = '".$mykid."'";
+        $result = mysqli_query($link, $query);
+        
+        $row = mysqli_fetch_assoc($result);
+        $name = $row["name"];
+        $dob =$row["dob"];
+        $bc = $row["bc"];
+        $address = $row["address"];
+        if($row["illness"] == NULL)
+            $illness = NULL;
+        else
+            $illness = $row["illness"];
+
+        if($row["allergy"] == NULL)
+            $allergy = NULL;
+        else
+            $allergy =$row["allergy"];
+
     }
 
     mysqli_stmt_close($stmt);
