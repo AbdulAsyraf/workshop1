@@ -51,27 +51,27 @@
             $sql = "$UPDATE student SET name = ?, dob = ?, mykid = ?, bc = ?, address = ?, illness = ?, allergy = ? WHERE username = ?";
 
             if($stmt = mysqli_prepare($link, $sql)){
-                mysqli_stmt_bind_param($stmt, "ssssssss", $param[0], $param[1], $param[2], $param[3], $param[4], $param[5], $param[6], $param[7]);
+                mysqli_stmt_bind_param($stmt, "ssssssss", $param_name, $param_dob, $param_mykid, $param_bc, $param_address, $param_illness, $param_allergy, $param_username);
 
-                $param[0] = $name;
-                $param[1] = $dob;
-                $param[2] = $mykid;
-                $param[3] = $bc;
-                $param[4] = $address;
-                $param[7] = $username;
+                $param_name = $name;
+                $param_dob = $dob;
+                $param_mykid = $mykid;
+                $param_bc = $bc;
+                $param_address = $address;
+                $param_username = $username;
 
                 if(empty(trim($_POST["illness"]))){
-                    $param[5] = NULL;
+                    $param_illness = NULL;
                 }
                 else{
-                    $param[5] = trim($_POST["illness"]);
+                    $param_illness = trim($_POST["illness"]);
                 }
     
                 if(empty(trim($_POST["allergy"]))){
-                    $param[6] = NULL;
+                    $param_allergy = NULL;
                 }
                 else{
-                    $param[6] = trim($_POST["allergy"]);
+                    $param_allergy = trim($_POST["allergy"]);
                 }
 
                 if(mysqli_stmt_execute($stmt)){
