@@ -48,7 +48,7 @@
 
         if(empty($err_arr)){
 
-            $sql = "$UPDATE student SET name = ?, dob = ?, mykid = ?, bc = ?, address = ?, illness = ?, allergy = ? WHERE username = ?";
+            $sql = "UPDATE student SET name = ?, dob = ?, mykid = ?, bc = ?, address = ?, illness = ?, allergy = ? WHERE username = ?";
 
             if($stmt = mysqli_prepare($link, $sql)){
                 mysqli_stmt_bind_param($stmt, "ssssssss", $param_name, $param_dob, $param_mykid, $param_bc, $param_address, $param_illness, $param_allergy, $param_username);
