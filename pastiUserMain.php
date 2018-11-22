@@ -42,7 +42,7 @@ require_once "../../configs/pastiConfig.php";
         echo "<th>Status</th>";
         echo "</tr>";
         
-        while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+        /*while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
             echo "<tr>";
             echo "<td>" . $row["name"] . "</td>";
             echo "<td>" . $row["mykid"] . "</td>";
@@ -53,7 +53,7 @@ require_once "../../configs/pastiConfig.php";
             echo "<td>" . $row["illness"] . "</td>";
             echo "<td>" . $row["status"] . "</td>";
             echo "</tr>";
-        }
+        }*/
         
         echo "</table>";
             
