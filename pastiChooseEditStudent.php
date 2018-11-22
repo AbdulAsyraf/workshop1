@@ -29,7 +29,7 @@
             mysqli_free_result($result);
             mysqli_close($link);
         ?>
-        <input type="submit" value="Submit">
+        <input type="submit" name="request" value="Submit">
     </form>
     <div class="form-group">
         

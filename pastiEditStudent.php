@@ -161,5 +161,6 @@
             <input type="reset" class="btn btn-default" value="Reset">
         </div>
     </form>
+        <input type="button" value="Cancel" onclick="location='pastiUserMain.php'">
 </div>
 </body></html>
