@@ -4,7 +4,15 @@
 
     require_once "../../configs/pastiConfig.php"
 
-    
+    if(isset($_POST["deletion"])){
+        $target = $_POST['choice'];
+        echo $target;
+        $sql = "DELETE FROM student WHERE mykid = '".$target."';";
+        mysqli_query($link, $sql);
+        mysqli_close($link);
+        header("location: pastiUserMain.php");
+        unset($_POST["deletion"]);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +39,7 @@
             mysqli_free_result($result);
             mysqli_close($link);
         ?>
-        <input type="submit" name="request" value="Submit (THIS IS IRREVERSIBLE)">
+        <input type="submit" name="deletion" value="Submit (THIS IS IRREVERSIBLE)">
     </form>
     <div class="form-group">
         
