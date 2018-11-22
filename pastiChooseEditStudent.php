@@ -23,7 +23,7 @@
             $result = mysqli_query($link, $query);
 
             while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-                echo "<input type='radio' name='choice' value='".$row['name']."'>".$row['name']."<b>";
+                echo "<input type='radio' name='choice' value='".$row['name']."'>".$row['name']."<br>";
             }
 
             mysqli_free_result($result);
