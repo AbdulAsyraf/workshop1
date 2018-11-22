@@ -10,29 +10,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || $_SESSION[
 
 require_once "../../configs/pastiConfig.php";
         
-$username = $_SESSION["username"];
-echo $username;
-$query = "SELECT name, mykid FROM student WHERE username = '" .$username. "'";
-$result = mysqli_query($link, $query);
 
-echo "<table border='1' width = '800'>
-        <tr>
-            <th>Name</th>
-            <th>MyKid</th>
-        </tr>";
-
-while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-    echo "<tr>";
-    echo "<td>" . $row["name"] . "</td>";
-    echo "<td>" . $row["mykid"] . "</td>";
-    echo "</tr>";
-}
-
-echo "</table>";
-    
-    
-mysqli_free_result($result);
-mysqli_close($link);
 
 
 ?>
@@ -48,6 +26,31 @@ mysqli_close($link);
     <div class="page-header">
         <h1>Hi user <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>.</h1>
     </div>
+    <?php
+        $username = $_SESSION["username"];
+        $query = "SELECT name, mykid FROM student WHERE username = '" .$username. "'";
+        $result = mysqli_query($link, $query);
+        
+        echo "<table border='1' width = '800'>
+                <tr>
+                    <th>Name</th>
+                    <th>MyKid</th>
+                </tr>";
+        
+        while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+            echo "<tr>";
+            echo "<td>" . $row["name"] . "</td>";
+            echo "<td>" . $row["mykid"] . "</td>";
+            echo "</tr>";
+        }
+        
+        echo "</table>";
+            
+            
+        mysqli_free_result($result);
+        mysqli_close($link);
+
+    ?>
     <p><input type="button" value="Add Parent or Guardian" onclick="location='pastiNewParent.php'" /></p>
     <p><input type="button" value="Add Student" onclick="location='pastiNewStudent.php'" /></p>
     <p><a href="pastiLogout.php" class="btn btn-danger">Sign Out</a></p>
