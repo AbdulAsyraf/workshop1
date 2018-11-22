@@ -28,13 +28,14 @@ require_once "../../configs/pastiConfig.php";
     </div>
     <?php
         $username = $_SESSION["username"];
-        $query = "SELECT name, mykid, status FROM student WHERE username = '" .$username. "'";
+        $query = "SELECT name, mykid, status, allergy FROM student WHERE username = '" .$username. "'";
         $result = mysqli_query($link, $query);
         
         echo "<table border='1' width = '800'>
                 <tr>
                     <th>Name</th>
                     <th>MyKid</th>
+                    <th>Allergy</th>
                     <th>Status</th>
                 </tr>";
         
@@ -42,6 +43,7 @@ require_once "../../configs/pastiConfig.php";
             echo "<tr>";
             echo "<td>" . $row["name"] . "</td>";
             echo "<td>" . $row["mykid"] . "</td>";
+            echo "<td>" . $row["allergy"] . "</td>";
             echo "<td>" . $row["status"] . "</td>";
             echo "</tr>";
         }
