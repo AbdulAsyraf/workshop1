@@ -31,7 +31,7 @@
         ?>
     </form>
     <div class="form-group">
-        <input type="submit" class="btn btn-primary" value="Submit">
+        <input type="submit" value="Submit">
         <input type="button" value="Cancel" onclick="location='pastiUserMain.php'">
     </div>
 </body>
