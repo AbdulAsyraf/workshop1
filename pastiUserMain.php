@@ -43,18 +43,18 @@ require_once "../../configs/pastiConfig.php";
         echo "<th>Status</th>";
         echo "</tr>";
         
-        /*while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+        while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
             echo "<tr>";
-            echo "<td>" . $row["name"] . "</td>";
-            echo "<td>" . $row["mykid"] . "</td>";
-            echo "<td>" . $row["dob"] . "</td>";
-            echo "<td>" . $row["bc"] . "</td>":
-            echo "<td>" . $row["address"] . "</td>";
-            echo "<td>" . $row["allergy"] . "</td>";
-            echo "<td>" . $row["illness"] . "</td>";
-            echo "<td>" . $row["status"] . "</td>";
-            echo "</tr>";
-        }*/
+            //echo "<td>" . $row["name"] . "</td>";
+            //echo "<td>" . $row["mykid"] . "</td>";
+            //echo "<td>" . $row["dob"] . "</td>";
+            //echo "<td>" . $row["bc"] . "</td>":
+            //echo "<td>" . $row["address"] . "</td>";
+            //echo "<td>" . $row["allergy"] . "</td>";
+            //echo "<td>" . $row["illness"] . "</td>";
+            //echo "<td>" . $row["status"] . "</td>";
+            //echo "</tr>";
+        }
         
         echo "</table>";
             
