@@ -6,10 +6,7 @@ session_start();
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || $_SESSION["usertype"] !== 0){
     header("location: pastiLogin.php");
     exit;
-}
-    require_once "../../configs/pastiConfig.php";
-
-    
+}   
 
 ?>
 
@@ -32,6 +29,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || $_SESSION[
     
     <?php 
     
+    require_once "../../configs/pastiConfig.php";
         $query = "SELECT name, mykid FROM student WHERE username = ".$_SESSION["username"];
         $result = mysqli_query($link, $query);
         while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
