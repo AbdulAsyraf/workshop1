@@ -16,7 +16,7 @@
             $err_arr[0] = "Please enter student's name";
         }
         else{
-            $name = trim($_POST["name"]);
+            $name2 = trim($_POST["name"]);
         }
     
         if(empty(trim($_POST["dobinput"]))){
@@ -24,28 +24,28 @@
         }
         else{
             $dobinput = trim($_POST["dobinput"]);
-            $dob = date("Y-m-d", strtotime($dobinput));
+            $dob2 = date("Y-m-d", strtotime($dobinput));
         }
     
         if(empty(trim($_POST["mykid"]))){
             $err_arr[2] = "Please enter student's MyKid number";
         }
         else{
-            $mykid = trim($_POST["mykid"]);
+            $mykid2 = trim($_POST["mykid"]);
         }
     
         if(empty(trim($_POST["bc"]))){
             $err_arr[3] = "Please enter student's birth certificate number";
         }
         else{
-            $bc = trim($_POST["bc"]);
+            $bc2 = trim($_POST["bc"]);
         }
     
         if(empty(trim($_POST["address"]))){
             $err_arr[4] = "Please enter student's address";
         }
         else{
-            $address = trim($_POST["address"]);
+            $address2 = trim($_POST["address"]);
         }
 
         if(empty($err_arr)){
@@ -55,11 +55,11 @@
             if($stmt = mysqli_prepare($link, $sql)){
                 mysqli_stmt_bind_param($stmt, "ssssssss", $param_name, $param_dob, $param_mykid, $param_bc, $param_address, $param_illness, $param_allergy, $mykidInit);
 
-                $param_name = $name;
-                $param_dob = $dob;
-                $param_mykid = $mykid;
-                $param_bc = $bc;
-                $param_address = $address;
+                $param_name = $name2;
+                $param_dob = $dob2;
+                $param_mykid = $mykid2;
+                $param_bc = $bc2;
+                $param_address = $address2;
 
                 if(empty(trim($_POST["illness"]))){
                     $param_illness = NULL;
