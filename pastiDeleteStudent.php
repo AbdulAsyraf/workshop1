@@ -10,7 +10,7 @@
         $sql = "DELETE FROM student WHERE mykid = '".$target."';";
         mysqli_query($link, $sql);
         mysqli_close($link);
-        header("location: pastiUserMain.php");
+        //header("location: pastiUserMain.php");
         unset($_POST["deletion"]);
     }
 ?>
