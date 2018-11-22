@@ -76,7 +76,7 @@
                 }
 
                 if(mysqli_stmt_execute($stmt)){
-                    echo $stmt;
+                    echo $mykidInit;
                     //header("location: pastiUserMain.php");
                 }
                 else{
