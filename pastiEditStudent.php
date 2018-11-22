@@ -17,6 +17,10 @@
         }
         else{
             $name2 = trim($_POST["name"]);
+            if ($name2 != $name){
+                $sql = "UPDATE student SET name = '".$name2."' WHERE mykid = '".$mykidInit"';";
+                mysqli_query($link, $sql);
+            }
         }
     
         if(empty(trim($_POST["dobinput"]))){
@@ -25,6 +29,8 @@
         else{
             $dobinput = trim($_POST["dobinput"]);
             $dob2 = date("Y-m-d", strtotime($dobinput));
+            $sql = "UPDATE student SET dob = '".$dob2."' WHERE mykid = '".$mykidInit"';";
+            mysqli_query($link, $sql);
         }
     
         if(empty(trim($_POST["mykid"]))){
@@ -32,6 +38,10 @@
         }
         else{
             $mykid2 = trim($_POST["mykid"]);
+            if($mykid2 != $mykid){
+                $sql = "UPDATE student SET mykid = '".$mykid2."' WHERE mykid = '".$mykidInit"';";
+                mysqli_query($link, $sql);
+            }
         }
     
         if(empty(trim($_POST["bc"]))){
@@ -39,6 +49,10 @@
         }
         else{
             $bc2 = trim($_POST["bc"]);
+            if($bc2 != $bc){
+                $sql = "UPDATE student SET bc = '".$bc2."' WHERE mykid = '".$mykidInit"';";
+                mysqli_query($link, $sql);
+            }
         }
     
         if(empty(trim($_POST["address"]))){
@@ -46,43 +60,39 @@
         }
         else{
             $address2 = trim($_POST["address"]);
+            if($address2 != $address){
+                $sql = "UPDATE student SET address = '".$address2."' WHERE mykid = '".$mykidInit"';";
+                mysqli_query($link, $sql);
+            }
+        }
+
+        if(empty(trim($_POST["illness"]))){
+            $param_illness = NULL;
+            $sql = "UPDATE student SET illness = NULL WHERE mykid = '".$mykidInit"';";
+            mysqli_query($link, $sql);
+        }
+        else{
+            $illness = trim($_POST["illness"]);
+            $sql = "UPDATE student SET illness = '".$illness."' WHERE mykid = '".$mykidInit"';";
+            mysqli_query($link, $sql);
+        }
+
+        if(empty(trim($_POST["allergy"]))){
+            $allergy = NULL;
+            $sql = "UPDATE student SET allergy = NULL WHERE mykid = '".$mykidInit"';";
+            mysqli_query($link, $sql);
+        }
+        else{
+            $allergy = trim($_POST["allergy"]);
+            $sql = "UPDATE student SET allergy = '".$allergy."' WHERE mykid = '".$mykidInit"';";
+            mysqli_query($link, $sql);
         }
 
         if(empty($err_arr)){
-
-            $sql = "UPDATE student SET name = ?, dob = ?, mykid = ?, bc = ?, address = ?, illness = ?, allergy = ? WHERE mykid = ?";
-
-            if($stmt = mysqli_prepare($link, $sql)){
-                mysqli_stmt_bind_param($stmt, "ssssssss", $param_name, $param_dob, $param_mykid, $param_bc, $param_address, $param_illness, $param_allergy, $mykidInit);
-
-                $param_name = $name2;
-                $param_dob = $dob2;
-                $param_mykid = $mykid2;
-                $param_bc = $bc2;
-                $param_address = $address2;
-
-                if(empty(trim($_POST["illness"]))){
-                    $param_illness = NULL;
-                }
-                else{
-                    $param_illness = trim($_POST["illness"]);
-                }
-    
-                if(empty(trim($_POST["allergy"]))){
-                    $param_allergy = NULL;
-                }
-                else{
-                    $param_allergy = trim($_POST["allergy"]);
-                }
-
-                if(mysqli_stmt_execute($stmt)){
-                    header("location: pastiUserMain.php");
-                }
-                else{
-                    echo "Something went wrong. Please try again later";
-                }
-            }
-
+            header("location: pastiUserMain.php");
+        }
+        else{
+            echo "Something went wrong. Please try again";
         }
     }
     else if(isset($_POST["request"])){
