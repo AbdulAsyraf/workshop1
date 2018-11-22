@@ -76,7 +76,8 @@
                 }
 
                 if(mysqli_stmt_execute($stmt)){
-                    header("location: pastiUserMain.php");
+                    echo $stmt;
+                    //header("location: pastiUserMain.php");
                 }
                 else{
                     echo "Something went wrong. Please try again later";
