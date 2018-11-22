@@ -4,14 +4,7 @@
 
     require_once "../../configs/pastiConfig.php"
 
-    if(isset($_POST["request"])){
-        $target = $_POST["choice"];
-        echo $target;
-        $sql = "DELETE FROM student WHERE mykid = '".$target."';";
-        mysqli_query($link, $sql);
-        mysqli_close($link);
-        header("location: pastiUserMain.php");
-    }
+    
 ?>
 
 <!DOCTYPE html>
