@@ -48,7 +48,7 @@ require_once "../../configs/pastiConfig.php";
             echo "<td>" . $row["name"] . "</td>";
             echo "<td>" . $row["mykid"] . "</td>";
             echo "<td>" . $row["dob"] . "</td>";
-            echo "<td>" . $row["bc"] . "</td>":
+            echo "<td>" . $row["bc"] . "</td>";
             echo "<td>" . $row["address"] . "</td>";
             echo "<td>" . $row["allergy"] . "</td>";
             echo "<td>" . $row["illness"] . "</td>";
