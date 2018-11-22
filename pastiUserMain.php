@@ -10,7 +10,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || $_SESSION[
 
 require_once "../../configs/pastiConfig.php";
         
-$query = "SELECT name, mykid FROM student WHERE username = '".$_SESSION["username"]. "'";
+$username = $_SESSION["username"];
+echo $username;
+$query = "SELECT name, mykid FROM student WHERE username = '" .$username. "'";
 $result = mysqli_query($link, $query);
 
 echo "<table border='1' width = '800'>
