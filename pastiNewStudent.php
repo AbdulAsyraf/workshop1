@@ -52,7 +52,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $sql = "INSERT INTO student (mykid, username, name, dob, bc, address, illness, allergy) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
         if($stmt = mysqli_prepare($link, $sql)){
-            mysqli_stmt_bind_param($stmt, "ssssss", $param_mykid, $param_username, $param_name, $param_dob, $param_bc, $param_address, $param_illness, $param_allergy);
+            mysqli_stmt_bind_param($stmt, "ssssssss", $param_mykid, $param_username, $param_name, $param_dob, $param_bc, $param_address, $param_illness, $param_allergy);
 
             $param_mykid = $mykid;
             $param_username = $username;
