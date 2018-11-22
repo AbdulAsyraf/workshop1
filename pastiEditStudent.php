@@ -8,6 +8,8 @@
 
     $err_arr = [];
 
+    $mykidInit = $_POST["choice"];
+
     if(isset($_POST["update"])){
         
         if(empty(trim($_POST["name"]))){
@@ -48,17 +50,16 @@
 
         if(empty($err_arr)){
 
-            $sql = "UPDATE student SET name = ?, dob = ?, mykid = ?, bc = ?, address = ?, illness = ?, allergy = ? WHERE username = ?";
+            $sql = "UPDATE student SET name = ?, dob = ?, mykid = ?, bc = ?, address = ?, illness = ?, allergy = ? WHERE mykid = ?";
 
             if($stmt = mysqli_prepare($link, $sql)){
-                mysqli_stmt_bind_param($stmt, "ssssssss", $param_name, $param_dob, $param_mykid, $param_bc, $param_address, $param_illness, $param_allergy, $param_username);
+                mysqli_stmt_bind_param($stmt, "ssssssss", $param_name, $param_dob, $param_mykid, $param_bc, $param_address, $param_illness, $param_allergy, $mykidInit);
 
                 $param_name = $name;
                 $param_dob = $dob;
                 $param_mykid = $mykid;
                 $param_bc = $bc;
                 $param_address = $address;
-                $param_username = $username;
 
                 if(empty(trim($_POST["illness"]))){
                     $param_illness = NULL;
