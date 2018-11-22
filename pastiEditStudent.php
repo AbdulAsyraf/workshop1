@@ -105,6 +105,9 @@
         else
             $allergy =$row["allergy"];
 
+
+        unset($_POST["request"]);
+
     }
 
     mysqli_stmt_close($stmt);
