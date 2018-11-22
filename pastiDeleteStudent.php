@@ -25,7 +25,7 @@
     <div class="page=header">
         <h1>Please choose which student to delete</h1>
     </div>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <?php
             $username = $_SESSION["username"];
             $query = "SELECT name, mykid FROM student WHERE username = '" .$username."'";
