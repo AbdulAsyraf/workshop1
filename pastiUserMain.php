@@ -31,12 +31,11 @@ require_once "../../configs/pastiConfig.php";
         $query = "SELECT * FROM student WHERE username = '" .$username. "';";
         $result = mysqli_query($link, $query);
         
-        echo $query;
         echo "<table border='1'>";
         echo "<tr>";
         echo "<th>Name</th>";
         echo "<th>MyKid</th>";
-        //echo "<th>Date of Birth</th>";
+        echo "<th>Date of Birth</th>";
         //echo "<th>Birth Certificate Number</th>";
         //echo "<th>Address</th>";
         echo "<th>Allergy</th>";
@@ -48,7 +47,7 @@ require_once "../../configs/pastiConfig.php";
             echo "<tr>";
             echo "<td>" . $row["name"] . "</td>";
             echo "<td>" . $row["mykid"] . "</td>";
-            //echo "<td>" . $row["dob"] . "</td>";
+            echo "<td>" . $row["dob"] . "</td>";
             //echo "<td>" . $row["bc"] . "</td>":
             //echo "<td>" . $row["address"] . "</td>";
             echo "<td>" . $row["allergy"] . "</td>";
