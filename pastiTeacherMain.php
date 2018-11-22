@@ -55,6 +55,8 @@ require_once "../../configs/pastiConfig.php";
 
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
     <?php
+        $query = "SELECT mykid, name FROM student WHERE status = 'Processing';";
+        $result = mysqli_query($link, $query);
         while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
             echo "<input type='radio' name='choice' value='".$row['mykid']."'>".$row['name']."<br>\n";
         }
