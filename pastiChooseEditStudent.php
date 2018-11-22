@@ -19,11 +19,11 @@
     <form action="pastiEditStudent" method="post">
         <?php
             $username = $_SESSION["username"];
-            $query = "SELECT name FROM student WHERE username = '" .$username."'";
+            $query = "SELECT name, mykid FROM student WHERE username = '" .$username."'";
             $result = mysqli_query($link, $query);
 
             while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-                echo "<input type='radio' name='choice' value='".$row['name']."'>".$row['name']."<br>";
+                echo "<input type='radio' name='choice' value='".$row['mykid']."'>".$row['name']."<br>";
             }
 
             mysqli_free_result($result);
