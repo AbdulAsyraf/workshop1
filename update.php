@@ -3,7 +3,7 @@
     require_once "../../configs/pastiConfig.php";
 
     $sql1 = "SELECT allergy FROM student WHERE mykid = '121211045555';";
-    $sql2 = "UPDATE student SET allergy = 'Updated boi' WHERE mykid = '121211045555';";
+    $sql2 = "UPDATE student SET allergy = NULL WHERE mykid = '121211045555';";
 
     $result = mysqli_query($link, $sql1);
 
