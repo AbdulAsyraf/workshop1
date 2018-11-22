@@ -8,7 +8,7 @@
 
     $err_arr = [];
 
-    $mykidInit = $_POST["choice"];
+    //$mykidInit = $_POST["choice"];
 
     if(isset($_POST["update"])){
         
@@ -97,8 +97,8 @@
         }
     }
     else if(isset($_POST["request"])){
-        $mykid = $_POST["choice"];
-        $query = "SELECT name, dob, bc, address, illness, allergy FROM student WHERE mykid = '".$mykid."'";
+        $mykid = $mykidInit = $_POST["choice"];
+        $query = "SELECT name, dob, bc, address, illness, allergy FROM student WHERE mykid = '".$mykidInit."'";
         $result = mysqli_query($link, $query);
         
         $row = mysqli_fetch_assoc($result);
