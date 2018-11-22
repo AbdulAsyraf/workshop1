@@ -51,6 +51,17 @@ require_once "../../configs/pastiConfig.php";
         }
         
         echo "</table>";
+
+    if(isset($_POST["approval"])){
+        $pick = $_POST["choice"];
+        $sql = "UPDATE student SET status = 'Approved' WHERE mykid = '".$pick."';";
+        if(mysqli_query($link, $sql)){
+            header("location: pastiTeacherMain.php");
+        }
+        else{
+            echo "Something went wrong. Please try again";
+        }
+    }
     ?>
 
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
@@ -64,7 +75,7 @@ require_once "../../configs/pastiConfig.php";
         mysqli_free_result($result);
         mysqli_close($link);
     ?>
-        <p><input type="submit" value="Approve Student"></p>
+        <p><input type="submit" name="approval" value="Approve Student"></p>
     </form>
         <p><a href="pastiLogout.php" class="btn btn-danger">Sign Out</a></p>
 </body>
