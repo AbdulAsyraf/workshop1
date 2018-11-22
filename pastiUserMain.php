@@ -9,8 +9,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || $_SESSION[
 }
     require_once "../../configs/pastiConfig.php";
 
-    $query = "SELECT name, mykid FROM student WHERE username = ".$_SESSION["username"];
-    $result = mysqli_query($link, $query);
+    
 
 ?>
 
@@ -31,12 +30,16 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || $_SESSION[
             <th>MyKid</th>
         </tr>
     
-    <?php while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-        echo "<tr>";
-        echo "<td>" . $row["name"] . "</td>";
-        echo "<td>" . $row["mykid"] . "</td>";
-        echo "</tr>";
-    }?>
+    <?php 
+    
+        $query = "SELECT name, mykid FROM student WHERE username = ".$_SESSION["username"];
+        $result = mysqli_query($link, $query);
+        while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+            echo "<tr>";
+            echo "<td>" . $row["name"] . "</td>";
+            echo "<td>" . $row["mykid"] . "</td>";
+            echo "</tr>";
+        }?>
     </table>
     <?php   mysqli_free_result($result);
             mysqli_close($link);
