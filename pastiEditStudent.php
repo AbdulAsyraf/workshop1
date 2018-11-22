@@ -21,7 +21,6 @@
             $name2 = trim($_POST["name"]);
             if ($name2 != $name){
                 $sql = "UPDATE student SET name = '".$name2."' WHERE mykid = '".$mykidInit."';";
-                echo $sql;
                 mysqli_query($link, $sql);
             }
         }
@@ -93,7 +92,7 @@
 
         if(empty($err_arr)){
             unset($_SESSION["mykid"]);
-            //header("location: pastiUserMain.php");
+            header("location: pastiUserMain.php");
         }
         else{
             echo "Something went wrong. Please try again";
