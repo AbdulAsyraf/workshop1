@@ -66,6 +66,7 @@ require_once "../../configs/pastiConfig.php";
     <!--<p><input type="button" value="Add Parent or Guardian" onclick="location='pastiNewParent.php'" /></p>-->
     <p><input type="button" value="Add Student" onclick="location='pastiNewStudent.php'" /></p>
     <p><input type="button" value="Edit Student Information" onclick="location='pastiChooseEditStudent.php'" /></p>
+    <p><input type="button" value="Delete Student" onclick="location='pastiDeleteStudent.php'" /></p>
     <p><a href="pastiLogout.php" class="btn btn-danger">Sign Out</a></p>
 </body>
 </html>
