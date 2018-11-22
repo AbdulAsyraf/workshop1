@@ -12,6 +12,8 @@
 
     if(isset($_POST["update"])){
         
+        $mykidInit = $_SESSION["mykid"];
+
         if(empty(trim($_POST["name"]))){
             $err_arr[0] = "Please enter student's name";
         }
@@ -90,6 +92,7 @@
         }
 
         if(empty($err_arr)){
+            unset($_SESSION["mykid"]);
             //header("location: pastiUserMain.php");
         }
         else{
@@ -97,7 +100,7 @@
         }
     }
     else if(isset($_POST["request"])){
-        $mykid = $mykidInit = $_POST["choice"];
+        $_SESSION["mykid"] = $mykid = $mykidInit = $_POST["choice"];
         $query = "SELECT name, dob, bc, address, illness, allergy FROM student WHERE mykid = '".$mykidInit."'";
         $result = mysqli_query($link, $query);
         
