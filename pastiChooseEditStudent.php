@@ -29,9 +29,10 @@
             mysqli_free_result($result);
             mysqli_close($link);
         ?>
+        <input type="submit" value="Submit">
     </form>
     <div class="form-group">
-        <input type="submit" value="Submit">
+        
         <input type="button" value="Cancel" onclick="location='pastiUserMain.php'">
     </div>
 </body>
