@@ -76,8 +76,7 @@
                 }
 
                 if(mysqli_stmt_execute($stmt)){
-                    echo $mykidInit;
-                    //header("location: pastiUserMain.php");
+                    header("location: pastiUserMain.php");
                 }
                 else{
                     echo "Something went wrong. Please try again later";
