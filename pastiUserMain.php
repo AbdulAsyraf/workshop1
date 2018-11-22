@@ -28,19 +28,19 @@ require_once "../../configs/pastiConfig.php";
     </div>
     <?php
         $username = $_SESSION["username"];
-        $query = "SELECT name, mykid, dob, bc, address, status, allergy FROM student WHERE username = '" .$username. "'";
+        $query = "SELECT * FROM student WHERE username = '" .$username. "'";
         $result = mysqli_query($link, $query);
         
-        echo "<table border='1'>
-                <tr>
-                    <th>Name</th>
-                    <th>MyKid</th>
-                    <th>Date of Birth</th>
-                    <th>Birth Certificate Number</th>
-                    <th>Address</th>
-                    <th>Allergy</th>
-                    <th>Status</th>
-                </tr>";
+        echo "<table border='1'>";
+        echo "<tr>";
+        echo "<th>Name</th>";
+        echo "<th>MyKid</th>";
+        echo "<th>Date of Birth</th>";
+        echo "<th>Birth Certificate Number</th>";
+        echo "<th>Address</th>";
+        echo "<th>Allergy</th>";
+        echo "<th>Status</th>";
+        echo "</tr>";
         
         while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
             echo "<tr>";
@@ -50,6 +50,7 @@ require_once "../../configs/pastiConfig.php";
             echo "<td>" . $row["bc"] . "</td>":
             echo "<td>" . $row["address"] . "</td>";
             echo "<td>" . $row["allergy"] . "</td>";
+            echo "<td>" . $row["illness"] . "</td>";
             echo "<td>" . $row["status"] . "</td>";
             echo "</tr>";
         }
