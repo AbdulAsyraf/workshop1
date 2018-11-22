@@ -28,7 +28,7 @@ require_once "../../configs/pastiConfig.php";
     </div>
     <?php
         $username = $_SESSION["username"];
-        $query = "SELECT * FROM student WHERE username = '" .$username. "'";
+        $query = "SELECT * FROM student WHERE username = '" .$username. "';";
         $result = mysqli_query($link, $query);
         
         echo "<table border='1'>";
