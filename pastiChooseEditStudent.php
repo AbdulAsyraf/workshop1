@@ -16,14 +16,14 @@
     <div class="page=header">
         <h1>Please choose which student to edit</h1>
     </div>
-    <form action="pastiEditStudent2.php" method="post">
+    <form action="pastiEditStudent.php" method="POST">
         <?php
             $username = $_SESSION["username"];
             $query = "SELECT name, mykid FROM student WHERE username = '" .$username."'";
             $result = mysqli_query($link, $query);
 
             while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-                echo "<input type='radio' name='choice' value='".$row['mykid']."'>".$row['name']."<br>";
+                echo "<input type='radio' name='choice' value='".$row['mykid']."'>".$row['name']."<br>\n";
             }
 
             mysqli_free_result($result);
