@@ -61,7 +61,7 @@
         $query2 = "SELECT username FROM users WHERE usertype = 1;";
         $result2 = mysqli_query($link, $query2);
         while($row2 = mysqli_fetch_array($result2, MYSQLI_ASSOC)){
-            echo "<input type='radio' name='choiceRemove' value='".$row['username']."'>".$row['username']."<br>\n";
+            echo "<input type='radio' name='choiceRemove' value='".$row2['username']."'>".$row2['username']."<br>\n";
         }
 
         mysqli_free_result($result2);
