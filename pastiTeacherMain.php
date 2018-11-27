@@ -51,22 +51,22 @@ require_once "../../configs/pastiConfig.php";
         while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
             echo "<tr>";
             echo "<td>" . $row["name"] . "</td>";
-            echo "<td>" . $row["a.mykid"] . "</td>";
-            echo "<td>" . $row["a.dob"] . "</td>";
-            echo "<td>" . $row["a.bc"] . "</td>";
-            echo "<td>" . $row["a.address"] . "</td>";
-            echo "<td>" . $row["a.allergy"] . "</td>";
-            echo "<td>" . $row["a.illness"] . "</td>";
-            echo "<td>" . $row["a.age"] . "</td>";
-            echo "<td>" . $row["b.name1"] . "</td>";
-            echo "<td>" . $row["b.mykad1"] . "</td>";
-            echo "<td>" . $row["b.job1"] . "</td>";
-            echo "<td>" . $row["b.phone1"] . "</td>";
-            echo "<td>" . $row["b.name2"] . "</td>";
-            echo "<td>" . $row["b.mykad2"] . "</td>";
-            echo "<td>" . $row["b.job2"] . "</td>";
-            echo "<td>" . $row["b.phone2"] . "</td>";
-            echo "<td>" . $row["b.address"] . "</td>";
+            echo "<td>" . $row["mykid"] . "</td>";
+            echo "<td>" . $row["dob"] . "</td>";
+            echo "<td>" . $row["bc"] . "</td>";
+            echo "<td>" . $row["address"] . "</td>";
+            echo "<td>" . $row["allergy"] . "</td>";
+            echo "<td>" . $row["illness"] . "</td>";
+            echo "<td>" . $row["age"] . "</td>";
+            echo "<td>" . $row["name1"] . "</td>";
+            echo "<td>" . $row["mykad1"] . "</td>";
+            echo "<td>" . $row["job1"] . "</td>";
+            echo "<td>" . $row["phone1"] . "</td>";
+            echo "<td>" . $row["name2"] . "</td>";
+            echo "<td>" . $row["mykad2"] . "</td>";
+            echo "<td>" . $row["job2"] . "</td>";
+            echo "<td>" . $row["phone2"] . "</td>";
+            echo "<td>" . $row["address"] . "</td>";
             echo "</tr>";
         }
         
