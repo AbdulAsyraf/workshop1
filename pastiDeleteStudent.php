@@ -29,7 +29,7 @@
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <?php
             $username = $_SESSION["username"];
-            $query = "SELECT name, mykid FROM student WHERE username = '" .$username."'";
+            $query = "SELECT name, mykid FROM student WHERE username = '" .$username."' AND status = 'Processing';";
             $result = mysqli_query($link, $query);
 
             while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
