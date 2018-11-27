@@ -5,8 +5,8 @@
         $today = new Datetime(date("Y-m-d"));
         $bday = new Datetime(date("Y-m-d", strtotime($dobinput)));
         //$diff = $today->diff($bday);
-        $today = $today->format('%y');
-        $bday = $bday->format('%y');
+        $today = $today->format('y');
+        $bday = $bday->format('y');
         echo $today;
         echo $bday;
         //$age = $todayInt - $bdayInt;
