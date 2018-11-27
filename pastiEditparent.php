@@ -120,7 +120,14 @@
             //$address = $_POST["address"];
         }
 
-        unset($_POST["update"]);
+        if(empty($err_arr)){
+            unset($_POST["update"]);
+            header("location: pastiUserMain.php");
+        }
+        else{
+            echo "Something went wrong. Please try again";
+        }
+
     }
     else {
         $username = $_SESSION["username"];
