@@ -31,6 +31,7 @@ require_once "../../configs/pastiConfig.php";
         $query = "SELECT * FROM student WHERE username = '" .$username. "';";
         $result = mysqli_query($link, $query);
         
+        echo "<p>Students</p>";
         echo "<table border='1'>";
         echo "<tr>";
         echo "<th>Name</th>";
@@ -64,6 +65,7 @@ require_once "../../configs/pastiConfig.php";
         $result = mysqli_query($link, $query);
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
+        echo "<p>Parents/Guardians</p>";
         echo "<table border='1'>";
         echo "<tr>";
         echo "<th>Name</th>";
@@ -98,6 +100,7 @@ require_once "../../configs/pastiConfig.php";
     <p><input type="button" value="Add Student" onclick="location='pastiNewStudent.php'" /></p>
     <p><input type="button" value="Edit Student Information" onclick="location='pastiChooseEditStudent.php'" /></p>
     <p><input type="button" value="Delete Student" onclick="location='pastiDeleteStudent.php'" /></p>
+    <p><input type="button" value="Edit Parent or Guardian Information" onclick="location='pastiEditparent.php'"/></p>
     <p><a href="pastiLogout.php" class="btn btn-danger">Sign Out</a></p>
 </body>
 </html>
