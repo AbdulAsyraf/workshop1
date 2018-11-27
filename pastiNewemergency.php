@@ -6,6 +6,10 @@
 
     require_once "../../configs/pastiConfig.php";
 
+    $err_arr = [];
+
+    $name = $phone = $relation = "";
+
 ?>
 
 <!DOCTYPE html>
