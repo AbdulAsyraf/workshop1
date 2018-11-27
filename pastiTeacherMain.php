@@ -24,7 +24,7 @@ require_once "../../configs/pastiConfig.php";
     </div>
     <?php
 
-        $query = "SELECT * FROM student WHERE status = 'Processing';";
+        $query = "SELECT a.mykid, a.name, a.dob, a.bc,  a.address, a.illness, a.allergy, a.age, b.name1, b.mykad1, b.job1, b.phone1, b.name2, b.mykad2, b.job2, b.phone2, b.address FROM student a, parentguardian b WHERE status = 'Processing' AND a.username = b.username;";
         $result = mysqli_query($link, $query);
 
         echo "<table border='1'>";
@@ -36,17 +36,37 @@ require_once "../../configs/pastiConfig.php";
         echo "<th>Address</th>";
         echo "<th>Allergy</th>";
         echo "<th>Illness</th>";
+        echo "<th>Age</th>";
+        echo "<th>Father's or Guardian's Name</th>";
+        echo "<th>MyKad Number</th>";
+        echo "<th>Occupation</th>";
+        echo "<th>Phone Number</th>";
+        echo "<th>Mother's or Guardian's Name</th>";
+        echo "<th>MyKad Number</th>";
+        echo "<th>Occupation</th>";
+        echo "<th>Phone Number</th>";
+        echo "<th>Address</th>";
         echo "</tr>";
 
         while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
             echo "<tr>";
-            echo "<td>" . $row["name"] . "</td>";
-            echo "<td>" . $row["mykid"] . "</td>";
-            echo "<td>" . $row["dob"] . "</td>";
-            echo "<td>" . $row["bc"] . "</td>";
-            echo "<td>" . $row["address"] . "</td>";
-            echo "<td>" . $row["allergy"] . "</td>";
-            echo "<td>" . $row["illness"] . "</td>";
+            echo "<td>" . $row["a.name"] . "</td>";
+            echo "<td>" . $row["a.mykid"] . "</td>";
+            echo "<td>" . $row["a.dob"] . "</td>";
+            echo "<td>" . $row["a.bc"] . "</td>";
+            echo "<td>" . $row["a.address"] . "</td>";
+            echo "<td>" . $row["a.allergy"] . "</td>";
+            echo "<td>" . $row["a.illness"] . "</td>";
+            echo "<td>" . $row["a.age"] . "</td>";
+            echo "<td>" . $row["b.name1"] . "</td>";
+            echo "<td>" . $row["b.mykad1"] . "</td>";
+            echo "<td>" . $row["b.job1"] . "</td>";
+            echo "<td>" . $row["b.phone1"] . "</td>";
+            echo "<td>" . $row["b.name2"] . "</td>";
+            echo "<td>" . $row["b.mykad2"] . "</td>";
+            echo "<td>" . $row["b.job2"] . "</td>";
+            echo "<td>" . $row["b.phone2"] . "</td>";
+            echo "<td>" . $row["b.address"] . "</td>";
             echo "</tr>";
         }
         
