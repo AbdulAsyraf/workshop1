@@ -72,14 +72,14 @@
 <body>
     <div class="wrapper">
         <h2>Fill up</h2>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <form action= "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($err_arr[0])) ? 'has-error' : ''; ?>">
                 <label>Name</label>
                 <input type="text" name="name" class="form-control" value="<?php echo $name; ?>">
                 <span class="help-block"><?php echo $err_arr[0]; ?></span>
             </div>
 
-            <div class="form-group <?php echo (!empty($err_arr[1)) ? 'has-error' : ''; ?>">
+            <div class="form-group <?php echo (!empty($err_arr[1])) ? 'has-error' : ''; ?>">
                 <label>Relationship</label>
                 <input type="text" name="relation" class="form-control" value="<?php echo $relation; ?>">
                 <span class="help-block"><?php echo $err_arr[1]; ?></span>
