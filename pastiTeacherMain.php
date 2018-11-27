@@ -24,7 +24,7 @@ require_once "../../configs/pastiConfig.php";
     </div>
     <?php
 
-        $query = "SELECT a.mykid, a.name, a.dob, a.bc,  a.address, a.illness, a.allergy, a.age, b.name1, b.mykad1, b.job1, b.phone1, b.name2, b.mykad2, b.job2, b.phone2, b.address FROM student a, parentguardian b WHERE status = 'Processing' AND a.username = b.username;";
+        $query = "SELECT a.mykid, a.name, a.dob, a.bc,  a.address, a.illness, a.allergy, a.age, b.name1, b.mykad1, b.job1, b.phone1, b.name2, b.mykad2, b.job2, b.phone2, b.address AS address2 FROM student a, parentguardian b WHERE status = 'Processing' AND a.username = b.username;";
         $result = mysqli_query($link, $query);
 
         echo "<table border='1'>";
@@ -66,7 +66,7 @@ require_once "../../configs/pastiConfig.php";
             echo "<td>" . $row["mykad2"] . "</td>";
             echo "<td>" . $row["job2"] . "</td>";
             echo "<td>" . $row["phone2"] . "</td>";
-            echo "<td>" . $row["address"] . "</td>";
+            echo "<td>" . $row["address2"] . "</td>";
             echo "</tr>";
         }
         
