@@ -127,15 +127,15 @@
         $query = "SELECT name1, mykad1, job1, phone1, name2, mykad2, job2, phone2, address FROM parentguardian WHERE username = '".$username."';";
         $result = mysqli_query($link, $query);
         $row = mysqli_fetch_assoc($result);
-        $name1 = $row['name1'];
-        $mykad1 = $row['mykad1'];
-        $job1 = $row['job1'];
-        $phone1 = $row['phone1'];
-        $name2 = $row['name2'];
-        $mykad2 = $row['mykad2'];
-        $job2 = $row['job2'];
-        $phone2 = $row['phone2'];
-        $address = $row['address'];
+        $name1 = $row["name1"];
+        $mykad1 = $row["mykad1"];
+        $job1 = $row["job1"];
+        $phone1 = $row["phone1"];
+        $name2 = $row["name2"];
+        $mykad2 = $row["mykad2"];
+        $job2 = $row["job2"];
+        $phone2 = $row["phone2"];
+        $address = $row["address"];
     }
 
     mysqli_free_result($result);
