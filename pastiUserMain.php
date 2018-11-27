@@ -59,7 +59,7 @@ require_once "../../configs/pastiConfig.php";
             echo "</tr>";
         }
         
-        echo "</table><br><br>";
+        echo "</table><br>";
 
         $query = "SELECT name1, mykad1, job1, phone1, name2, mykad2, job2, phone2, address FROM parentguardian WHERE username = '".$username."';";
         $result = mysqli_query($link, $query);
@@ -89,8 +89,26 @@ require_once "../../configs/pastiConfig.php";
                 <td>".$row["phone2"]."</td>
                 <td>".$row["address"]."</td>
             </tr>
-        </table>";
-            
+        </table><br>";
+
+        $query = "SELECT name, relation, phone FROM emergency WHERE username = '".$username."';";
+        $result = mysqli_query($link, $query);
+        $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+        echo "<p>Emergency Contact</p>
+            <table border='1'>
+            <tr>
+                <th>Name</th>
+                <th>Relationship</th>
+                <th>Phone Number</th>
+            </tr>";
+
+        echo "<tr>
+                <td>".$row["name"]."</td>
+                <td>".$row["relation"]."</td>
+                <td>".$row["phone"]."</td>
+            </tr>
+        </table>";            
             
         mysqli_free_result($result);
         mysqli_close($link);
