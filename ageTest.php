@@ -1,10 +1,10 @@
 <?php
 
     if($_SERVER["REQUEST_METHOD"]) == "POST"){
-        $today = new Datetime(date("Y-m-d"));
+        //$today = new Datetime(date("Y-m-d"));
         $bday = new Datetime(date("Y-m-d", strtotime($_POST["dobinput"])));
-        $diff = $today->diff($bday);
-        printf('Your age is %d years old', $diff->Y);
+        //$diff = $today->diff($bday);
+        //printf('Your age is %d years old', $diff->Y);
     }
 
 ?>
