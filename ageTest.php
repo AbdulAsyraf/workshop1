@@ -1,8 +1,9 @@
 <?php
 
     if(isset($_POST["test"])){
+        $dobinput = $_POST["dobinput"];
         $today = new Datetime(date("Y-m-d"));
-        $bday = new Datetime(date("Y-m-d", strtotime($_POST["dobinput"])));
+        $bday = new Datetime(date("Y-m-d", strtotime($dobinput)));
         /*$diff = $today->diff($bday);
         printf('Your age is %d years old', $diff->Y);*/
     }
