@@ -119,8 +119,10 @@
             }
             //$address = $_POST["address"];
         }
+
+        unset($_POST["update"];
     }
-    else if(isset($_POST["request"])){
+    else {
         $username = $_SESSION["username"];
         $query = "SELECT name1, mykad1, job1, phone1, name2, mykad2, job2, phone2, address FROM parentguardian WHERE username = '".$username."';";
         $result = mysqli_query($link, $query);
@@ -134,8 +136,6 @@
         $job2 = $row['job2'];
         $phone2 = $row['phone2'];
         $address = $row['address'];
-
-        unset($_POST["request"]);
     }
 
     mysqli_free_result($result);
