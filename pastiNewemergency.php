@@ -1,4 +1,66 @@
+<?php
 
+    session_start();
+
+    $username = $_SESSION["username"];
+
+    require_once "../../configs/pastiConfig.php";
+
+    $err_arr = [];
+
+    $name = $phone = $relation = "";
+
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+        if(empty(trim($_POST["name"]))){
+            $err_arr[0] = "This field is required";
+        }
+        else{
+            $name = trim($_POST["name"]);
+        }
+
+        if(empty(trim($_POST["relation"]))){
+            $err_arr[1] = "This field is required";
+        }
+        else{
+            $relation = trim($_POST["relation"]);
+        }
+
+        if(empty(trim($_POST["phone"]))){
+            $err_arr[2] = "This field is required";
+        }
+        else{
+            $phone = trim($_POST["phone"]);
+        }
+
+        if(empty($err_arr)){
+            $sql = "INSERT INTO emergency (username, name, relation, phone) values (?, ?, ?, ?)";
+
+            if($stmt = mysqli_prepare($link, $sql)){
+
+                mysqli_stmt_bind_param($stmt, "ssss", $username, $param_name, $param_relation, $param_phone);
+
+                $param_name = $name;
+                $param_relation = $relation;
+                $param_phone = $phone;
+
+                if(mysqli_stmt_execute($stmt)){
+                    $sql = "UPDATE users set emergency = 'Yes' WHERE username = '".$username."';";
+                    mysqli_query($link, $sql);
+
+                    header("location: pastiLogin.php");
+                }
+                else{
+                    echo "Something went wrong. Please try again later";
+                }
+            }
+        }
+
+        mysqli_stmt_close($link);
+        mysqli_close($link);
+    }
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +87,7 @@
 
             <div class="form-group <?php echo (!empty($err_arr[2])) ? 'has-error' : ''; ?>">
                 <label>Phone Number</label>
-                <input type="text" name="phone" class="form-control" value="<?php echo $phone; ?>">
+                <input type="tel" name="phone" minlength="9" maxlength="11" class="form-control" value="<?php echo $phone; ?>">
                 <span class="help-block"><?php echo $err_arr[2]; ?></span>
             </div>
 
