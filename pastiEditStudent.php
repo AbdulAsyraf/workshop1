@@ -33,7 +33,7 @@
             $dob2 = date("Y-m-d", strtotime($dobinput));
             
             $today = new Datetime(date("Y-m-d"));
-            $bday = new Datetime($dob);
+            $bday = new Datetime($dob2);
             $diff = $today->diff($bday);
             $age = $diff->format('%y');
             $sql = "UPDATE student SET dob = '".$dob2."', age = ".$age." WHERE mykid = '".$mykidInit."';";
