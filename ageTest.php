@@ -8,9 +8,6 @@
         $today = $today->format('y');
         $bday = $bday->format('y');
         $age = $today - $bday;
-        echo $age;
-        echo $today;
-        echo $bday;
         //$age = $todayInt - $bdayInt;
         //echo $age;
         //printf('Your age is %d years old', $diff->Y);

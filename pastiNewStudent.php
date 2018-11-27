@@ -28,8 +28,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     $today = new Datetime(date("Y-m-d"));
     $bday = new Datetime($dob);
-    $diff = $today->diff($bday);
-    $age = $diff->format('%y');
+    $today = $today->format('y');
+    $bday = $bday->format('y');
+    $age = $today - $bday;
 
     if(empty(trim($_POST["mykid"]))){
         $mykid_err = "Please enter student's MyKid number";

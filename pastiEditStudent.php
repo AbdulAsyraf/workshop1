@@ -34,8 +34,9 @@
             
             $today = new Datetime(date("Y-m-d"));
             $bday = new Datetime($dob2);
-            $diff = $today->diff($bday);
-            $age = $diff->format('%y');
+            $today = $today->format('y');
+            $bday = $bday->format('y');
+            $age = $today - $bday;
             $sql = "UPDATE student SET dob = '".$dob2."', age = ".$age." WHERE mykid = '".$mykidInit."';";
             mysqli_query($link, $sql);
         }
