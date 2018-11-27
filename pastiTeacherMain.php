@@ -97,10 +97,10 @@ require_once "../../configs/pastiConfig.php";
     ?>
         <p><input type="submit" name="approval" value="Approve Student"></p>
     </form>
-        <p><input type="button" name="edit" value="Edit Profile"></p>
         <p><input type="button" name="examInput" value="Input Exam Scores"></p>
         <p><input type="button" name="examView" value="View Exam Scores"></p>
         <p><input type="button" name="searchStudent" value="Search"></p>
+        <p><input type="button" name="edit" value="Edit Profile"></p>
         <p><a href="pastiLogout.php" class="btn btn-danger">Sign Out</a></p>
 </body>
 </html>
