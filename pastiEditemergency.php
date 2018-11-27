@@ -27,7 +27,7 @@
         else{
             $newrelation = trim($_POST["relation"]);
             if($newrelation != $relation){
-                $sql = "UPDATE emergency SET relation = '".$newrelation."' WHERE username = '".$username"';";
+                $sql = "UPDATE emergency SET relation = '".$newrelation."' WHERE username = '".$username."';";
                 mysqli_query($link, $sql);
             }
         }
