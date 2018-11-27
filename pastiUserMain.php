@@ -59,6 +59,35 @@ require_once "../../configs/pastiConfig.php";
         }
         
         echo "</table>";
+
+        $query = "SELECT name1, mykad1, job1, phone1, name2, mykad2, job2, phone2, address FROM parentguardian WHERE username = '".$username."';";
+        $result = mysqli_query($link, $query);
+        $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+        echo "<table border='1'>";
+        echo "<tr>";
+        echo "<th>Name</th>";
+        echo "<th>MyKad</th>";
+        echo "<th>Occupation</th>";
+        echo "<th>Phone Number</th>";
+        echo "<th>Address</th>";
+        echo "</tr>";
+
+        echo "<tr>
+                <td>".$row["name1"]."</td>
+                <td>".$row["mykad1"]."</td>
+                <td>".$row["job1"]."</td>
+                <td>".$row["phone1"]."</td>
+                <td>".$row["address"]."</td>
+            </tr>
+            <tr>
+                <td>".$row["name2"]."</td>
+                <td>".$row["mykad2"]."</td>
+                <td>".$row["job2"]."</td>
+                <td>".$row["phone2"]."</td>
+                <td>".$row["address"]."</td>
+            </tr>
+        </table>";
             
             
         mysqli_free_result($result);
