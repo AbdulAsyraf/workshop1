@@ -26,6 +26,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $dob = date("Y-m-d", strtotime($dobinput));
     }
 
+    $today = new Datetime(date("Y-m-d"));
+    $bday = new Datetime($dob);
+    $diff = $today->diff($bday);
+    $age = $diff->format('%y');
+
     if(empty(trim($_POST["mykid"]))){
         $mykid_err = "Please enter student's MyKid number.";
     }else{

@@ -31,9 +31,16 @@
         else{
             $dobinput = trim($_POST["dobinput"]);
             $dob2 = date("Y-m-d", strtotime($dobinput));
-            $sql = "UPDATE student SET dob = '".$dob2."' WHERE mykid = '".$mykidInit."';";
+            
+            $today = new Datetime(date("Y-m-d"));
+            $bday = new Datetime($dob);
+            $diff = $today->diff($bday);
+            $age = $diff->format('%y');
+            $sql = "UPDATE student SET dob = '".$dob2."', age = ".$age." WHERE mykid = '".$mykidInit."';";
             mysqli_query($link, $sql);
         }
+
+        
     
         if(empty(trim($_POST["mykid"]))){
             $err_arr[2] = "Please enter student's MyKid number";

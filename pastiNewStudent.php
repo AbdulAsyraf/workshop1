@@ -26,6 +26,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $dob = date("Y-m-d", strtotime($dobinput));
     }
 
+    $today = new Datetime(date("Y-m-d"));
+    $bday = new Datetime($dob);
+    $diff = $today->diff($bday);
+    $age = $diff->format('%y');
+
     if(empty(trim($_POST["mykid"]))){
         $mykid_err = "Please enter student's MyKid number";
     }
@@ -49,10 +54,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     if(empty($name_err) && empty($dob_err) && empty($mykid_err) && empty($bc_err) && empty($address_err)){
 
-        $sql = "INSERT INTO student (mykid, username, name, dob, bc, address, illness, allergy) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO student (mykid, username, name, dob, bc, address, illness, allergy, age) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         if($stmt = mysqli_prepare($link, $sql)){
-            mysqli_stmt_bind_param($stmt, "ssssssss", $param_mykid, $param_username, $param_name, $param_dob, $param_bc, $param_address, $param_illness, $param_allergy);
+            mysqli_stmt_bind_param($stmt, "ssssssssi", $param_mykid, $param_username, $param_name, $param_dob, $param_bc, $param_address, $param_illness, $param_allergy, $age);
 
             $param_mykid = $mykid;
             $param_username = $username;
