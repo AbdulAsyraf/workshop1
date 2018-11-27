@@ -50,7 +50,7 @@ require_once "../../configs/pastiConfig.php";
 
         while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
             echo "<tr>";
-            echo "<td>" . $row["a.name"] . "</td>";
+            echo "<td>" . $row["name"] . "</td>";
             echo "<td>" . $row["a.mykid"] . "</td>";
             echo "<td>" . $row["a.dob"] . "</td>";
             echo "<td>" . $row["a.bc"] . "</td>";
