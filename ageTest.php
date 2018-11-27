@@ -1,11 +1,11 @@
 <?php
 
-    /*if($_SERVER["REQUEST_METHOD"]) == "POST"){
-        $today = new Datetime(date("Y-m-d"));
+    if(isset($_POST["test"])){
+        /*$today = new Datetime(date("Y-m-d"));
         $bday = new Datetime(date("Y-m-d", strtotime($_POST["dobinput"])));
         $diff = $today->diff($bday);
-        printf('Your age is %d years old', $diff->Y);
-    }*/
+        printf('Your age is %d years old', $diff->Y);*/
+    }
 
 ?>
 
@@ -25,7 +25,7 @@
                 <input type="date" name="dobinput" class="form-control" value="<?php echo $dobinput; ?>">
             </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-primary" valuye="Submit">
+                <input type="submit" name="test" class="btn btn-primary" value="Submit">
             </div>
         </form>
     </div>
