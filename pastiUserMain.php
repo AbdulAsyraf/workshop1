@@ -58,7 +58,7 @@ require_once "../../configs/pastiConfig.php";
             echo "</tr>";
         }
         
-        echo "</table>";
+        echo "</table><br><br>";
 
         $query = "SELECT name1, mykad1, job1, phone1, name2, mykad2, job2, phone2, address FROM parentguardian WHERE username = '".$username."';";
         $result = mysqli_query($link, $query);
