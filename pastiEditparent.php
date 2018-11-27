@@ -120,7 +120,7 @@
             //$address = $_POST["address"];
         }
 
-        unset($_POST["update"];
+        unset($_POST["update"]);
     }
     else {
         $username = $_SESSION["username"];
