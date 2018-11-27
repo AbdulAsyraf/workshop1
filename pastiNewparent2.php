@@ -128,7 +128,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     mysqli_stmt_execute($stmt3);
                 }
 
-                header("location: pastiUserMain.php");
+                header("location: pastiLogin.php");
             }
             else{
                 echo ("Error Description: ".mysqli_error($link));
