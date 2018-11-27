@@ -5,10 +5,12 @@
         $today = new Datetime(date("Y-m-d"));
         $bday = new Datetime(date("Y-m-d", strtotime($dobinput)));
         //$diff = $today->diff($bday);
-        $todayInt = (int)$today->format('%y');
-        $bdayInt = (int)$bday->format('%y');
-        $age = $todayInt - $bdayInt;
-        echo $age;
+        $today = $today->format('%y');
+        $bday = $bday->format('%y');
+        echo $today;
+        echo $bday;
+        //$age = $todayInt - $bdayInt;
+        //echo $age;
         //printf('Your age is %d years old', $diff->Y);
     }
 
