@@ -6,7 +6,7 @@
 
     $username = $_SESSION["username"];
     $sql = "SELECT * FROM teacher WHERE username = '".$username."';";
-    result = mysqli_query($link, $sql);
+    $result = mysqli_query($link, $sql);
 
     echo "<table border='1'
             <tr>
