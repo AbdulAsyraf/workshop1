@@ -4,7 +4,7 @@
 
     $username = $_SESSION["username"];
 
-    require_once "../../configs/pastiConfig.php":
+    require_once "../../configs/pastiConfig.php";
 
     $err_arr = [];
 
