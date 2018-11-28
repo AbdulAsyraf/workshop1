@@ -83,7 +83,7 @@
 
     <div class="form-group <?php echo (!empty($err_arr[1])) ? 'has-error' : ''; ?>">
         <label>MyKad</label>
-        <input type="text" name = "mykad" class="form-control" value="<?php echo $mykad; ?>">
+        <input type="text" name = "mykad" maxlength="12" class="form-control" value="<?php echo $mykad; ?>">
         <span class="help-block"><?php echo $err_arr[1]; ?></span>
     </div>
 
@@ -98,5 +98,9 @@
         <input type="tel" name = "phone" minlength="9" maxlength="11" class="form-control" value="<?php echo $phone; ?>">
         <span class="help-block"><?php echo $err_arr[3]; ?></span>
     </div>
+
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="Submit">
+        <input type="reset" clase="btn btn-default" value="Reset">
 </body>
 </html>
