@@ -7,7 +7,7 @@
     if(isset($_POST["search"])){
         if(!empty(trim($_POST["term"]))){
             $term = trim($_POST["term"]);
-            $query = "SELECT a.mykid, a.name, a.dob, a.bc,  a.address, a.illness, a.allergy, a.age, b.name1, b.mykad1, b.job1, b.phone1, b.name2, b.mykad2, b.job2, b.phone2, b.address AS address2 FROM student a, parentguardian b WHERE CONCAT(a.mykid, a.name, a.dob, a.bc, a.address, a.illness, a.allergy, a.age) LIKE '%".$term."%';";
+            $query = "SELECT a.mykid, a.name, a.dob, a.bc,  a.address, a.illness, a.allergy, a.age, b.name1, b.mykad1, b.job1, b.phone1, b.name2, b.mykad2, b.job2, b.phone2, b.address AS address2 FROM student a, parentguardian b WHERE a.name LIKE '%".$term."%' OR a.mykid LIKE '%".$term."%' OR a.address LIKE '%".$term."%' OR b.name1 LIKE '%".$term."%' or b.name2 LIKE '%".$term."%';";
             $result = mysqli_query($link, $query);
             if(mysqli_num_rows($result) >0){
                 echo "<table border='1'>";
