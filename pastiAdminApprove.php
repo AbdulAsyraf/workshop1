@@ -95,7 +95,7 @@ require_once "../../configs/pastiConfig.php";
     ?>
         <p><input type="submit" name="approval" value="Approve Student"></p>
     </form>
-        <p><input type="button" value="Back" onclick="location='pastiAdminMain.php'">
+        <p><input type="button" value="Back" onclick="location='pastiAdminMain.php'"></p>
         <p><a href="pastiLogout.php" class="btn btn-danger">Sign Out</a></p>
 </body>
 </html>
