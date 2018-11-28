@@ -25,15 +25,15 @@
         switch($now){
             case 12:
                 echo "<th>December</th>";
-            case 11: default:
-                echo "<th>Novemmber</th>";
+            case 11:
+                echo "<th>November</th>";
             case 10:
                 echo "<th>October</th>";
             case 9:
                 echo "<th>September</th>";
             case 8:
                 echo "<th>August</th>";
-            case 7:
+            case 7: default:
                 echo "<th>July</th>";
             case 6:
                 echo "<th>June</th>";
