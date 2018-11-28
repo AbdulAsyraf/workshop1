@@ -78,7 +78,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                     header("location: pastiUserMain.php");
                             }
                             elseif($usertype === 1){
-                                header("location: pastiTeacherMain.php");
+                                if($check_filled == "unfilled")
+                                    header("location: pastiTeacherProfile.php");
+                                else    
+                                    header("location: pastiTeacherMain.php");
                             }
                             elseif($usertype === 2){
                                 header("location: pastiAdminMain.php");
