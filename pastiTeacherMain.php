@@ -71,11 +71,10 @@ require_once "../../configs/pastiConfig.php";
         }
         
         echo "</table>";
-        
+
     ?>
         <p><input type="button" name="approval" value="Approve Student" onclick="location='pastiAdminApprove.php'"></p>
-        <p><input type="button" name="examInput" value="Input Exam Scores"></p>
-        <p><input type="button" name="examView" value="View Exam Scores"></p>
+        <p><input type="button" name="fee" value="Fee" onclick="location='pastiFee.php'"></p>
         <p><input type="button" name="searchStudent" onclick="location='pastiSearch.php'" value="Search"></p>
         <p><input type="button" name="edit" value="View Profile" onclick="location='pastiTeacherViewProfile.php'"></p>
         <p><a href="pastiLogout.php" class="btn btn-danger">Sign Out</a></p>
