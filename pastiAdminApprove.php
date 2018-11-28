@@ -3,7 +3,7 @@
 session_start();
 
 //check for logged in status
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || $_SESSION["usertype"] !== 2){
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || $_SESSION["usertype"] === 0){
     header("location: pastiLogin.php");
     exit;
 }

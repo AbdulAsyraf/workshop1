@@ -19,12 +19,12 @@ require_once "../../configs/pastiConfig.php";
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <div class="page-header">
+    <div class="pageheader">
         <h1>Hi teacher <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>.</h1>
     </div>
     <?php
 
-        $query = "SELECT a.mykid, a.name, a.dob, a.bc,  a.address, a.illness, a.allergy, a.age, b.name1, b.mykad1, b.job1, b.phone1, b.name2, b.mykad2, b.job2, b.phone2, b.address AS address2 FROM student a, parentguardian b WHERE status = 'Processing' AND a.username = b.username;";
+        $query = "SELECT a.mykid, a.name, a.dob, a.bc,  a.address, a.illness, a.allergy, a.age, b.name1, b.mykad1, b.job1, b.phone1, b.name2, b.mykad2, b.job2, b.phone2, b.address AS address2 FROM student a, parentguardian b WHERE a.username = b.username;";
         $result = mysqli_query($link, $query);
 
         echo "<table border='1'>";
@@ -71,32 +71,9 @@ require_once "../../configs/pastiConfig.php";
         }
         
         echo "</table>";
-
-    if(isset($_POST["approval"])){
-        $pick = $_POST["choice"];
-        $sql = "UPDATE student SET status = 'Approved' WHERE mykid = '".$pick."';";
-        if(mysqli_query($link, $sql)){
-            header("location: pastiTeacherMain.php");
-        }
-        else{
-            echo "Something went wrong. Please try again";
-        }
-    }
+        
     ?>
-
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-    <?php
-        $query = "SELECT mykid, name FROM student WHERE status = 'Processing';";
-        $result = mysqli_query($link, $query);
-        while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-            echo "<input type='radio' name='choice' value='".$row['mykid']."'>".$row['name']."<br>\n";
-        }
-
-        mysqli_free_result($result);
-        mysqli_close($link);
-    ?>
-        <p><input type="submit" name="approval" value="Approve Student"></p>
-    </form>
+        <p><input type="button" name="approval" value="Approve Student" onclick="location='pastiAdminApprove.php'"></p>
         <p><input type="button" name="examInput" value="Input Exam Scores"></p>
         <p><input type="button" name="examView" value="View Exam Scores"></p>
         <p><input type="button" name="searchStudent" onclick="location='pastiSearch.php'" value="Search"></p>

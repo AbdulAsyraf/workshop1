@@ -8,7 +8,7 @@
     $sql = "SELECT * FROM teacher WHERE username = '".$username."';";
     $result = mysqli_query($link, $sql);
 
-    echo "<table border='1'
+    echo "<table border='1'>
             <tr>
                 <th>Name</th>
                 <th>MyKad</th>
