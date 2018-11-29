@@ -4,6 +4,16 @@
 
     require_once "../../configs/pastiConfig.php";
 
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+        $mykid = $_POST["who"];
+        $month = $_POST["when"];
+        $status = $_POST["status"];
+
+        $query = "UPDATE fee SET '" .$month. "' = '" .$status. "' WHERE mykid = '" .$mykid. "';";
+        mysqli_query($link, $query);
+        header("location: pastiFee.php");
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -72,7 +82,7 @@
                 case 8:
                     echo "<td>" . $rows["august"] . "</td>";
                 case 7:
-                    echo "<td>" . $rows["july"] . "</td>";
+                    echo "<td>" . $rows["july"] . "</td>";echo "<option value='november'>November</option>";
                 case 6:
                     echo "<td>" . $rows["june"] . "</td>";
                 case 5:
@@ -85,11 +95,73 @@
                     echo "<td>" . $rows["february"] . "</td>";
                 case 1:
                     echo "<td>" . $rows["january"] . "</td>";
+                    break;
             }
             echo "</tr>";
         }
         echo "</table>";
 
     ?>
+
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <div class="form-group">
+            <select name="who">
+                <option disabled selected value> --Select a student-- </option>
+                <?php
+                    $sql = "SELECT a.name, b.mykid FROM student a, fee b WHERE a.mykid = b.mykid;";
+                    $result = mysqli_query($link, $sql);
+                    while($rows = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+                        echo "<option value='".$rows["mykid"]."'>".$rows["name"]."\t".$rows["mykid"]."</option>";
+                    }
+                ?>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <select name="when">
+                <option disabled selected value> --Select a month-- </option>
+                <?php
+                    $now = date("n");
+                    switch($now){
+                        case 11: default:
+                            echo "<option value='november'>November</option>";
+                        case 10:
+                            echo "<option value='october'>October</option>";
+                        case 9:
+                            echo "<option value='september'>September</option>";
+                        case 8:
+                            echo "<option value='august'>August</option>";
+                        case 7:
+                            echo "<option value='july'>July</option>";
+                        case 6:
+                            echo "<option value='june'>June</option>";
+                        case 5:
+                            echo "<option value='may'>May</option>";
+                        case 4:
+                            echo "<option value='april'>April</option>";
+                        case 3:
+                            echo "<option value='march'>March</option>";
+                        case 2:
+                            echo "<option value='february'>February</option>";
+                        case 1:
+                            echo "<option value='january'>January</option>";
+                            break;                            
+                    }
+                ?>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <select name="status">
+                <option value='No'>No</option>
+                <option value='Yes'>Yes</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Submit" class="btn btn-primary">
+        </div>
+    </form>
+        <input type="button" value="Back" onclick="location='pastiLogin.php'">
 </body>
 </html>
