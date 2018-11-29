@@ -9,7 +9,7 @@
         $month = $_POST["when"];
         $status = $_POST["status"];
 
-        $query = "UPDATE fee SET '" .$month. "' = '" .$status. "' WHERE mykid = '" .$mykid. "';";
+        $query = "UPDATE fee SET " .$month. " = '" .$status. "' WHERE mykid = '" .$mykid. "';";
         mysqli_query($link, $query);
         header("location: pastiFee.php");
     }
@@ -153,8 +153,8 @@
         
         <div class="form-group">
             <select name="status">
-                <option value='No'>No</option>
-                <option value='Yes'>Yes</option>
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
             </select>
         </div>
 
