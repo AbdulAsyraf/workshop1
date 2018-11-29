@@ -82,7 +82,7 @@
                 case 8:
                     echo "<td>" . $rows["august"] . "</td>";
                 case 7:
-                    echo "<td>" . $rows["july"] . "</td>";echo "<option value='november'>November</option>";
+                    echo "<td>" . $rows["july"] . "</td>";
                 case 6:
                     echo "<td>" . $rows["june"] . "</td>";
                 case 5:
@@ -105,7 +105,7 @@
 
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <div class="form-group">
-            <select name="who">
+            <p><select name="who">
                 <option disabled selected value> --Select a student-- </option>
                 <?php
                     $sql = "SELECT a.name, b.mykid FROM student a, fee b WHERE a.mykid = b.mykid;";
@@ -114,11 +114,11 @@
                         echo "<option value='".$rows["mykid"]."'>".$rows["name"]."\t".$rows["mykid"]."</option>";
                     }
                 ?>
-            </select>
+            </select></p>
         </div>
 
         <div class="form-group">
-            <select name="when">
+            <p><select name="when">
                 <option disabled selected value> --Select a month-- </option>
                 <?php
                     $now = date("n");
@@ -148,14 +148,14 @@
                             break;                            
                     }
                 ?>
-            </select>
+            </select></p>
         </div>
         
         <div class="form-group">
-            <select name="status">
+            <p><select name="status">
                 <option value="No">No</option>
                 <option value="Yes">Yes</option>
-            </select>
+            </select></p>
         </div>
 
         <div class="form-group">
