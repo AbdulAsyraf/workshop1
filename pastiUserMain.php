@@ -32,9 +32,11 @@ require_once "../../configs/pastiConfig.php";
         $result = mysqli_query($link, $query);
         
         echo "<p>Children</p>";
-        echo "<p><input type="button" value="Add Child" onclick="location='pastiNewStudent.php'" />";
-        echo "<input type="button" value="Edit Child Information" onclick="location='pastiChooseEditStudent.php'" />";
-        echo "<input type="button" value="Delete Student(Only for unapproved children)" onclick="location='pastiDeleteStudent.php'" /></p>";
+        ?>
+        <p><input type="button" value="Add Child" onclick="location='pastiNewStudent.php'" />"
+        <input type="button" value="Edit Child Information" onclick="location='pastiChooseEditStudent.php'" />"
+        <input type="button" value="Delete Student(Only for unapproved children)" onclick="location='pastiDeleteStudent.php'" /></p>"
+        <?php
         echo "<table border='1'>";
         echo "<tr>";
         echo "<th>Name</th>";
@@ -67,18 +69,18 @@ require_once "../../configs/pastiConfig.php";
         $query = "SELECT name1, mykad1, job1, phone1, name2, mykad2, job2, phone2, address FROM parentguardian WHERE username = '".$username."';";
         $result = mysqli_query($link, $query);
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-
-        echo "<p>Parents/Guardians</p>";
-        echo "<p><input type="button" value="Edit Parent or Guardian Information" onclick="location='pastiEditparent.php'"/></p>";
-        echo "<table border='1'>";
-        echo "<tr>";
-        echo "<th>Name</th>";
-        echo "<th>MyKad</th>";
-        echo "<th>Occupation</th>";
-        echo "<th>Phone Number</th>";
-        echo "<th>Address</th>";
-        echo "</tr>";
-
+        ?>
+        <p>Parents/Guardians</p>
+        <p><input type="button" value="Edit Parent or Guardian Information" onclick="location='pastiEditparent.php'"/></p>
+        <table border='1'>
+        <tr>
+            <th>Name</th>
+            <th>MyKad</th>
+            <th>Occupation</th>
+            <th>Phone Number</th>
+            <th>Address</th>
+        </tr>
+        <?php
         echo "<tr>
                 <td>".$row["name1"]."</td>
                 <td>".$row["mykad1"]."</td>
@@ -98,16 +100,16 @@ require_once "../../configs/pastiConfig.php";
         $query = "SELECT name, relation, phone FROM emergency WHERE username = '".$username."';";
         $result = mysqli_query($link, $query);
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-
-        echo "<p>Emergency Contact</p>
-            <p><input type="button" value="Edit Emergency Contact Information" onclick="location ='pastiEditemergency.php'"/></p>
-            <table border='1'>
+        ?>
+        <p>Emergency Contact</p>
+        <p><input type="button" value="Edit Emergency Contact Information" onclick="location ='pastiEditemergency.php'"/></p>
+        <table border='1'>
             <tr>
                 <th>Name</th>
                 <th>Relationship</th>
                 <th>Phone Number</th>
-            </tr>";
-
+            </tr>"
+        <?php
         echo "<tr>
                 <td>".$row["name"]."</td>
                 <td>".$row["relation"]."</td>
