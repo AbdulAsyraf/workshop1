@@ -33,9 +33,9 @@ require_once "../../configs/pastiConfig.php";
         
         echo "<p>Children</p>";
         ?>
-        <p><input type="button" value="Add Child" onclick="location='pastiNewStudent.php'" />"
-        <input type="button" value="Edit Child Information" onclick="location='pastiChooseEditStudent.php'" />"
-        <input type="button" value="Delete Student(Only for unapproved children)" onclick="location='pastiDeleteStudent.php'" /></p>"
+        <p><input type="button" value="Add Child" onclick="location='pastiNewStudent.php'" />
+        <input type="button" value="Edit Child Information" onclick="location='pastiChooseEditStudent.php'" />
+        <input type="button" value="Delete Student(Only for unapproved children)" onclick="location='pastiDeleteStudent.php'" /></p>
         <?php
         echo "<table border='1'>";
         echo "<tr>";
@@ -108,7 +108,7 @@ require_once "../../configs/pastiConfig.php";
                 <th>Name</th>
                 <th>Relationship</th>
                 <th>Phone Number</th>
-            </tr>"
+            </tr>
         <?php
         echo "<tr>
                 <td>".$row["name"]."</td>
