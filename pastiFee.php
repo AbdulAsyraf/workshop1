@@ -28,6 +28,69 @@
         $now = date("n");
         $sql = "SELECT a.name, a.mykid AS mykid, b.name1, b.phone1, b.name2, b.phone2, c.* FROM student a, parentguardian b, fee c WHERE a.username = b.username AND a.mykid = c.mykid;";
         $result = mysqli_query($link, $sql);
+        $rows = mysqli_fetch_array($result, MYSQLI_NUM);
+        switch($now){
+            case 11: default:
+                if($rows[$now+16] == "N/A"){
+                    $sql = "UPDATE fee SET november = 'No';";
+                    mysqli_query($link, $sql);
+                }
+            case 10:
+                if($rows[$now+15] == "N/A"){
+                    $sql = "UPDATE fee SET october = 'No';";
+                    mysqli_query($link, $sql);
+                }
+            case 9:
+                if($rows[$now+14] == "N/A"){
+                    $sql = "UPDATE fee SET september = 'No';";
+                    mysqli_query($link, $sql);
+                }
+            case 8:
+                if($rows[$now+13] == "N/A"){
+                    $sql = "UPDATE fee SET august = 'No';";
+                    mysqli_query($link, $sql);
+                }
+            case 7:
+                if($rows[$now+12] == "N/A"){
+                    $sql = "UPDATE fee SET july = 'No';";
+                    mysqli_query($link, $sql);
+                }
+            case 6:
+                if($rows[$now+11] == "N/A"){
+                    $sql = "UPDATE fee SET june = 'No';";
+                    mysqli_query($link, $sql);
+                }
+            case 5:
+                if($rows[$now+10] == "N/A"){
+                    $sql = "UPDATE fee SET may = 'No';";
+                    mysqli_query($link, $sql);
+                }
+            case 4:
+                if($rows[$now+9] == "N/A"){
+                    $sql = "UPDATE fee SET april = 'No';";
+                    mysqli_query($link, $sql);
+                }
+            case 3:
+                if($rows[$now+8] == "N/A"){
+                    $sql = "UPDATE fee SET march = 'No';";
+                    mysqli_query($link, $sql);
+                }
+            case 2:
+                if($rows[$now+7] == "N/A"){
+                    $sql = "UPDATE fee SET february = 'No';";
+                    mysqli_query($link, $sql);
+                }
+            case 1:
+                if($rows[$now+6] == "N/A"){
+                    $sql = "UPDATE fee SET january = 'No';";
+                    mysqli_query($link, $sql);
+                }
+                break;
+        }
+
+        $sql = "SELECT a.name, a.mykid AS mykid, b.name1, b.phone1, b.name2, b.phone2, c.* FROM student a, parentguardian b, fee c WHERE a.username = b.username AND a.mykid = c.mykid;";
+        $result = mysqli_query($link, $sql);
+        
         echo "<table border='1'>
                     <tr>
                         <th>Name</th>
@@ -36,32 +99,21 @@
                         <th>Phone Number</th>
                         <th>Mother's/Guardian's Name</th>
                         <th>Phone Number</th>";
-        switch($now){
-            case 11: default:
-                echo "<th>November</th>";
-            case 10:
-                echo "<th>October</th>";
-            case 9:
-                echo "<th>September</th>";
-            case 8:
-                echo "<th>August</th>";
-            case 7:
-                echo "<th>July</th>";
-            case 6:
-                echo "<th>June</th>";
-            case 5:
-                echo "<th>May</th>";
-            case 4:
-                echo "<th>April</th>";
-            case 3:
-                echo "<th>March</th>";
-            case 2:
-                echo "<th>February</th>";
-            case 1:
-                echo "<th>January</th>";
-                break;
-        }
-        echo "</tr>";
+
+        echo "  <th>January</th>
+                <th>February</th>
+                <th>March</th>
+                <th>April</th>
+                <th>May</th>
+                <th>June</th>
+                <th>July</th>
+                <th>August</th>
+                <th>September</th>
+                <th>October</th>
+                <th>November</th>
+            </tr>";
+        
+        
         
         while($rows = mysqli_fetch_array($result, MYSQLI_ASSOC)){
             echo "<tr>
@@ -72,7 +124,19 @@
                     <td>" . $rows["name2"] . "</td>
                     <td>" . $rows["phone2"] . "</td>";
             
-            switch($now){
+            echo "<td>" . $rows["january"] . "</td>";
+            echo "<td>" . $rows["february"] . "</td>";
+            echo "<td>" . $rows["march"] . "</td>";
+            echo "<td>" . $rows["april"] . "</td>";
+            echo "<td>" . $rows["may"] . "</td>";
+            echo "<td>" . $rows["june"] . "</td>";
+            echo "<td>" . $rows["july"] . "</td>";
+            echo "<td>" . $rows["august"] . "</td>";
+            echo "<td>" . $rows["september"] . "</td>";
+            echo "<td>" . $rows["october"] . "</td>";
+            echo "<td>" . $rows["november"] . "</td>";
+            
+            /*switch($now){
                 case 11: default:
                     echo "<td>" . $rows["november"] . "</td>";
                 case 10:
@@ -96,7 +160,7 @@
                 case 1:
                     echo "<td>" . $rows["january"] . "</td>";
                     break;
-            }
+            }*/
             echo "</tr>";
         }
         echo "</table>";
