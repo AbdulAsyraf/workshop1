@@ -31,7 +31,10 @@ require_once "../../configs/pastiConfig.php";
         $query = "SELECT * FROM student WHERE username = '" .$username. "';";
         $result = mysqli_query($link, $query);
         
-        echo "<p>Students</p>";
+        echo "<p>Children</p>";
+        echo "<p><input type="button" value="Add Child" onclick="location='pastiNewStudent.php'" />";
+        echo "<input type="button" value="Edit Child Information" onclick="location='pastiChooseEditStudent.php'" />";
+        echo "<input type="button" value="Delete Student(Only for unapproved children)" onclick="location='pastiDeleteStudent.php'" /></p>"
         echo "<table border='1'>";
         echo "<tr>";
         echo "<th>Name</th>";
@@ -66,6 +69,7 @@ require_once "../../configs/pastiConfig.php";
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
         echo "<p>Parents/Guardians</p>";
+        echo "<p><input type="button" value="Edit Parent or Guardian Information" onclick="location='pastiEditparent.php'"/></p>";
         echo "<table border='1'>";
         echo "<tr>";
         echo "<th>Name</th>";
@@ -96,6 +100,7 @@ require_once "../../configs/pastiConfig.php";
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
         echo "<p>Emergency Contact</p>
+            <p><input type="button" value="Edit Emergency Contact Information" onclick="location ='pastiEditemergency.php'"/></p>
             <table border='1'>
             <tr>
                 <th>Name</th>
@@ -114,12 +119,12 @@ require_once "../../configs/pastiConfig.php";
         mysqli_close($link);
 
     ?>
-    <!--<p><input type="button" value="Add Parent or Guardian" onclick="location='pastiNewParent.php'" /></p>-->
+    <!--<p><input type="button" value="Add Parent or Guardian" onclick="location='pastiNewParent.php'" /></p>
     <p><input type="button" value="Add Student" onclick="location='pastiNewStudent.php'" /></p>
     <p><input type="button" value="Edit Student Information" onclick="location='pastiChooseEditStudent.php'" /></p>
     <p><input type="button" value="Delete Student" onclick="location='pastiDeleteStudent.php'" /></p>
     <p><input type="button" value="Edit Parent or Guardian Information" onclick="location='pastiEditparent.php'"/></p>
-    <p><input type="button" value="Edit Emergency Contact Information" onclick="location ='pastiEditemergency.php'"/></p>
-    <p><a href="pastiLogout.php" class="btn btn-danger">Sign Out</a></p>
+    <p><input type="button" value="Edit Emergency Contact Information" onclick="location ='pastiEditemergency.php'"/></p>-->
+    <p><input type="button" value="Sign Out" onclick="location:'pastiLogout.php'" class="btn btn-danger"></p>
 </body>
 </html>
