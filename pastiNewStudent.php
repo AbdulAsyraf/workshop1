@@ -68,14 +68,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $param_address = $address;
 
             if(empty(trim($_POST["illness"]))){
-                $param_illness = NULL;
+                $param_illness = "None";
             }
             else{
                 $param_illness = trim($_POST["illness"]);
             }
 
             if(empty(trim($_POST["allergy"]))){
-                $param_allergy = NULL;
+                $param_allergy = "None";
             }
             else{
                 $param_allergy = trim($_POST["allergy"]);

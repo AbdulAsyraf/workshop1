@@ -77,8 +77,8 @@
         }
 
         if(empty(trim($_POST["illness"]))){
-            $illness = NULL;
-            $sql = "UPDATE student SET illness = NULL WHERE mykid = '".$mykidInit."';";
+            $illness = "None";
+            $sql = "UPDATE student SET illness = 'None' WHERE mykid = '".$mykidInit."';";
             mysqli_query($link, $sql);
         }
         else{
@@ -88,8 +88,8 @@
         }
 
         if(empty(trim($_POST["allergy"]))){
-            $allergy = NULL;
-            $sql = "UPDATE student SET allergy = NULL WHERE mykid = '".$mykidInit."';";
+            $allergy = "None";
+            $sql = "UPDATE student SET allergy = 'None' WHERE mykid = '".$mykidInit."';";
             mysqli_query($link, $sql);
         }
         else{
@@ -116,15 +116,8 @@
         $dob =$row["dob"];
         $bc = $row["bc"];
         $address = $row["address"];
-        if($row["illness"] == NULL)
-            $illness = NULL;
-        else
-            $illness = $row["illness"];
-
-        if($row["allergy"] == NULL)
-            $allergy = NULL;
-        else
-            $allergy =$row["allergy"];
+        $illness = $row["illness"];
+        $allergy =$row["allergy"];
 
 
         unset($_POST["request"]);
