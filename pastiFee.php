@@ -28,67 +28,67 @@
         $now = date("n");
         $sql = "SELECT a.name, a.mykid AS mykid, b.name1, b.phone1, b.name2, b.phone2, c.* FROM student a, parentguardian b, fee c WHERE a.username = b.username AND a.mykid = c.mykid;";
         $result = mysqli_query($link, $sql);
-        $rows = mysqli_fetch_array($result, MYSQLI_ASSOC);
-        
-        switch($now){
-            case 11: default:
-                if($rows["november"] == "N/A"){
-                    $sql = "UPDATE fee SET november = 'No';";
-                    mysqli_query($link, $sql);
-                }
-            case 10:
-                if($rows["october"] == "N/A"){
-                    $sql = "UPDATE fee SET october = 'No';";
-                    mysqli_query($link, $sql);
-                }
-            case 9:
-                if($rows["september"] == "N/A"){
-                    $sql = "UPDATE fee SET september = 'No';";
-                    mysqli_query($link, $sql);
-                }
-            case 8:
-                if($rows["august"] == "N/A"){
-                    $sql = "UPDATE fee SET august = 'No';";
-                    mysqli_query($link, $sql);
-                }
-            case 7:
-                if($rows["july"] == "N/A"){
-                    $sql = "UPDATE fee SET july = 'No';";
-                    mysqli_query($link, $sql);
-                }
-            case 6:
-                if($rows["june"] == "N/A"){
-                    $sql = "UPDATE fee SET june = 'No';";
-                    mysqli_query($link, $sql);
-                }
-            case 5:
-                if($rows["may"] == "N/A"){
-                    $sql = "UPDATE fee SET may = 'No';";
-                    mysqli_query($link, $sql);
-                }
-            case 4:
-                if($rows["april"] == "N/A"){
-                    $sql = "UPDATE fee SET april = 'No';";
-                    mysqli_query($link, $sql);
-                }
-            case 3:
-                if($rows["march"] == "N/A"){
-                    $sql = "UPDATE fee SET march = 'No';";
-                    mysqli_query($link, $sql);
-                }
-            case 2:
-                if($rows["february"] == "N/A"){
-                    $sql = "UPDATE fee SET february = 'No';";
-                    mysqli_query($link, $sql);
-                }
-            case 1:
-                if($rows["january"] == "N/A"){
-                    $sql = "UPDATE fee SET january = 'No';";
-                    mysqli_query($link, $sql);
-                }
-                break;
+        while($rows = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+            $mykid = $rows["mykid"];
+            switch($now){
+                case 11: default:
+                    if($rows["november"] == "N/A"){
+                        $sql = "UPDATE fee SET november = 'No' WHERE mykid = '" .$mykid. "';";
+                        mysqli_query($link, $sql);
+                    }
+                case 10:
+                    if($rows["october"] == "N/A"){
+                        $sql = "UPDATE fee SET october = 'No' WHERE mykid = '" .$mykid. "';";
+                        mysqli_query($link, $sql);
+                    }
+                case 9:
+                    if($rows["september"] == "N/A"){
+                        $sql = "UPDATE fee SET september = 'No' WHERE mykid = '" .$mykid. "';";
+                        mysqli_query($link, $sql);
+                    }
+                case 8:
+                    if($rows["august"] == "N/A"){
+                        $sql = "UPDATE fee SET august = 'No' WHERE mykid = '" .$mykid. "';";
+                        mysqli_query($link, $sql);
+                    }
+                case 7:
+                    if($rows["july"] == "N/A"){
+                        $sql = "UPDATE fee SET july = 'No' WHERE mykid = '" .$mykid. "';";
+                        mysqli_query($link, $sql);
+                    }
+                case 6:
+                    if($rows["june"] == "N/A"){
+                        $sql = "UPDATE fee SET june = 'No' WHERE mykid = '" .$mykid. "';";
+                        mysqli_query($link, $sql);
+                    }
+                case 5:
+                    if($rows["may"] == "N/A"){
+                        $sql = "UPDATE fee SET may = 'No' WHERE mykid = '" .$mykid. "';";
+                        mysqli_query($link, $sql);
+                    }
+                case 4:
+                    if($rows["april"] == "N/A"){
+                        $sql = "UPDATE fee SET april = 'No' WHERE mykid = '" .$mykid. "';";
+                        mysqli_query($link, $sql);
+                    }
+                case 3:
+                    if($rows["march"] == "N/A"){
+                        $sql = "UPDATE fee SET march = 'No' WHERE mykid = '" .$mykid. "';";
+                        mysqli_query($link, $sql);
+                    }
+                case 2:
+                    if($rows["february"] == "N/A"){
+                        $sql = "UPDATE fee SET february = 'No' WHERE mykid = '" .$mykid. "';";
+                        mysqli_query($link, $sql);
+                    }
+                case 1:
+                    if($rows["january"] == "N/A"){
+                        $sql = "UPDATE fee SET january = 'No' WHERE mykid = '" .$mykid. "';";
+                        mysqli_query($link, $sql);
+                    }
+                    break;
+            }
         }
-
         $sql = "SELECT a.name, a.mykid AS mykid, b.name1, b.phone1, b.name2, b.phone2, c.* FROM student a, parentguardian b, fee c WHERE a.username = b.username AND a.mykid = c.mykid;";
         $result = mysqli_query($link, $sql);
         
