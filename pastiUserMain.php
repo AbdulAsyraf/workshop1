@@ -34,7 +34,7 @@ require_once "../../configs/pastiConfig.php";
         echo "<p>Children</p>";
         echo "<p><input type="button" value="Add Child" onclick="location='pastiNewStudent.php'" />";
         echo "<input type="button" value="Edit Child Information" onclick="location='pastiChooseEditStudent.php'" />";
-        echo "<input type="button" value="Delete Student(Only for unapproved children)" onclick="location='pastiDeleteStudent.php'" /></p>"
+        echo "<input type="button" value="Delete Student(Only for unapproved children)" onclick="location='pastiDeleteStudent.php'" /></p>";
         echo "<table border='1'>";
         echo "<tr>";
         echo "<th>Name</th>";
