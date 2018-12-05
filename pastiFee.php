@@ -7,9 +7,9 @@
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         $mykid = $_POST["who"];
         $month = $_POST["when"];
-        $status = $_POST["status"];
+        //$status = $_POST["status"];
 
-        $query = "UPDATE fee SET " .$month. " = '" .$status. "' WHERE mykid = '" .$mykid. "';";
+        $query = "UPDATE fee SET " .$month. " = 'Yes' WHERE mykid = '" .$mykid. "';";
         mysqli_query($link, $query);
         header("location: pastiFee.php");
     }
@@ -217,15 +217,16 @@
         </div>
         
         <div class="form-group">
-            <p><select name="status">
-                <option value="No">No</option>
-                <option value="Yes">Yes</option>
-            </select></p>
+            <!--p><select name="status"-->
+                <!--<option value="No">No</option>
+                <option value="Yes">Yes</option>-->
+                <p><input type="submit" value="Confirm Payment" class="btn btn-primary"></p>
+            <!--/select></p-->
         </div>
 
-        <div class="form-group">
+        <!--<div class="form-group">
             <input type="submit" value="Submit" class="btn btn-primary">
-        </div>
+        </div>-->
     </form>
         <input type="button" value="Back" onclick="location='pastiLogin.php'">
 </body>
