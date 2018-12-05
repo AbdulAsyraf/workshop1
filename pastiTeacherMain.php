@@ -75,8 +75,8 @@ require_once "../../configs/pastiConfig.php";
     ?>
         <p><input type="button" name="approval" value="Approve Student" onclick="location='pastiAdminApprove.php'"></p>
         <p><input type="button" name="fee" value="Fee" onclick="location='pastiFee.php'"></p>
-        <p><input type="button" name="searchStudent" onclick="location='pastiSearch.php'" value="Search"></p>
+        <p><input type="button" name="searchStudent" onclick="location='pastiSearch.php'" value="View Students"></p>
         <p><input type="button" name="edit" value="View Profile" onclick="location='pastiTeacherViewProfile.php'"></p>
-        <p><a href="pastiLogout.php" class="btn btn-danger">Sign Out</a></p>
+        <p><input type="button" value="Sign Out" onclick="location:'pastiLogout.php'" class="btn btn-danger"></p>
 </body>
 </html>
