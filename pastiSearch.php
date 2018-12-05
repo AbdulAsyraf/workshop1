@@ -133,6 +133,7 @@
 
     <div class="form-group">
         <input type="submit" name="search" class="btn btn-primary" value="Search">
+        <input type="submit" name="reset" class="btn btn-primary" value="Reset">
     </form>
         <p><input type="button" value="Back" onclick="location='pastiLogin.php'"></p>
 </body></html>
