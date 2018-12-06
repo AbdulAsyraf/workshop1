@@ -33,7 +33,7 @@
             $arr_fee[2]++;
         }
     }*/
-    echo $arr_rows[2];
+    echo $arr_rows[0][2];
 
     /*echo "Hi";
     echo $arr_fee[0];
