@@ -7,7 +7,7 @@
     $result = mysqli_query($link, $sql);
 
     while($rows = mysqli_fetch_array($result, MYSQLI_NUM)){
-        for( $i = 0; $i < sizeof($rows), $i++){
+        for( $i = 0; $i < count($rows), $i++){
             if($rows[$i] == "Yes")
                 $arr_fee[0]++;
             elseif($rows[$i] == "No")
@@ -16,5 +16,5 @@
         }
     }
 
-    echo $arr_fee[0] . "<br>" . $arr_fee[1] . "<br>" . $arr_fee[2];
+    echo $arr_fee[0];
 ?>
