@@ -12,7 +12,7 @@
     while($rows = mysqli_fetch_array($result, MYSQLI_NUM)){
         $arr_rows[] = $rows;
     }
-    sizeof($arr_rows);
+    echo sizeof($arr_rows);
     
     /*for ($x = 0; $x < 11; $x++){
         if($arr_rows[$i] == "Yes"){
