@@ -6,7 +6,7 @@
     $sql = "SELECT january, february, march, april, may, june, juluy, august, september, october, november FROM fee;";
     $result = mysqli_query($link, $sql);
     $rows = mysqli_fetch_array($result);
-    echo $rows;
+    echo $rows[0];
 
     /*while($rows = mysqli_fetch_array($result, MYSQLI_NUM)){
         $rowLength = count($rows);
