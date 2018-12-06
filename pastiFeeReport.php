@@ -7,8 +7,8 @@
     $result = mysqli_query($link, $sql);
     $rows = mysqli_fetch_array($result);
     //echo count($rows);*/
-
-    $arr_rows = [] = $rows;
+    $arr_rows = []
+    $arr_rows[] = $rows;
     /*while($rows = mysqli_fetch_array($result, MYSQLI_NUM)){
         $arr_rows[] = $rows;
         
