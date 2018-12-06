@@ -26,11 +26,13 @@
     }
 
     //echo $arr_rows[0][2];
-
+    $percentage = ($arr_fee[1]/$arr_fee[2])*100;
     echo "Paid fees: \t";
-    echo $arr_fee[0];
-    echo "<br>Unpaid fees: \t";
+    echo $arr_fee[0]*110;
+    echo "<br>Number of unpaid months: \t";
     echo $arr_fee[1];
     echo "<br>Total: \t";
     echo $arr_fee[2];
+    echo "<br>Percentage of unpaid fees: \t";
+    echo $percentage;
 ?>
