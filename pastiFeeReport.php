@@ -19,7 +19,7 @@
             }
             $arr_fee[2]++;
         }
-    }
+    
 
     echo "Hi";
     echo $arr_fee[0];
