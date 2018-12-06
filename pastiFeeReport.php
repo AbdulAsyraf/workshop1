@@ -8,9 +8,11 @@
     /*$rows = mysqli_fetch_array($result);
     echo count($rows);*/
 
-    $rows = mysqli_fetch_array($result, MYSQLI_NUM)
-        $rowLength = count($rows);
-        for( $i = 0; $i < $rowLength, $i++){
+    $arr_rows = [];
+    while($rows = mysqli_fetch_array($result, MYSQLI_NUM)){
+        $arr_rows[] = $rows[0];
+        //$rowLength = count($rows);
+        /*for( $i = 0; $i < $rowLength, $i++){
             if($rows[$i] == "Yes"){
                 $arr_fee[0]++;
             }
@@ -18,13 +20,14 @@
                 $arr_fee[1]++;
             }
             $arr_fee[2]++;
-        }
-    
+        }*/
+    }
+    print_r($arr_rows);
 
-    echo "Hi";
+    /*echo "Hi";
     echo $arr_fee[0];
     echo "Hi";
     echo $arr_fee[1];
     echo "Hi";
-    echo $arr_fee[2];
+    echo $arr_fee[2];*/
 ?>
