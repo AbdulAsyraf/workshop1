@@ -31,14 +31,14 @@
                 $arr_fee[1]++;
             }
             $arr_fee[2]++;
-        }*/
-    }
+        }
+    }*/
     print_r($arr_rows);
 
-    echo "Hi";
+    /*echo "Hi";
     echo $arr_fee[0];
     echo "Hi";
     echo $arr_fee[1];
     echo "Hi";
-    echo $arr_fee[2];
+    echo $arr_fee[2];*/
 ?>
