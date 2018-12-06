@@ -10,7 +10,7 @@
 
     $arr_rows = [];
     while($rows = mysqli_fetch_array($result, MYSQLI_NUM)){
-        $arr_rows[] = $rows[0];
+        $arr_rows[] = $rows;
         //$rowLength = count($rows);
         /*for( $i = 0; $i < $rowLength, $i++){
             if($rows[$i] == "Yes"){
