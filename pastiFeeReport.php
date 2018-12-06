@@ -16,5 +16,5 @@
         }
     }
 
-    echo $arr_fee[0]."\t".$arr_fee[1]."\t".$arr_fee[2];
+    echo $arr_fee[0] . "<br>" . $arr_fee[1] . "<br>" . $arr_fee[2];
 ?>
