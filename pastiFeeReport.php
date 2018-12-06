@@ -5,11 +5,11 @@
     $arr_fee = array(0, 0, 0);//[yes, no, total]
     $sql = "SELECT january, february, march, april, may, june, july, august, september, october, november FROM fee;";
     $result = mysqli_query($link, $sql);
-    /*$rows = mysqli_fetch_array($result);
-    echo count($rows);*/
+    $rows = mysqli_fetch_array($result);
+    //echo count($rows);*/
 
-    $arr_rows = [];
-    while($rows = mysqli_fetch_array($result, MYSQLI_NUM)){
+    $arr_rows = [] = $rows;
+    /*while($rows = mysqli_fetch_array($result, MYSQLI_NUM)){
         $arr_rows[] = $rows;
         
         for ($x = 0; $x < 11; $x++){
