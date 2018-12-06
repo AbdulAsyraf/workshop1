@@ -1,6 +1,17 @@
 <?php
-    
     require_once "../../configs/pastiConfig.php";
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fee report</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <?php
     
     $arr_fee = array(0, 0, 0);//[yes, no, total]
     $sql = "SELECT january, february, march, april, may, june, july, august, september, october, november FROM fee;";
@@ -36,3 +47,7 @@
     echo "<br>Percentage of unpaid fees: \t";
     echo $percentage;
 ?>
+
+<p><input type="button" value="Back" onclick="location='pastiLogin.php'"></p>
+
+</body></html>
