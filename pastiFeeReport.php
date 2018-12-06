@@ -7,11 +7,14 @@
     $result = mysqli_query($link, $sql);
 
     while($rows = mysqli_fetch_array($result, MYSQLI_NUM)){
-        for( $i = 0; $i < count($rows), $i++){
-            if($rows[$i] == "Yes")
+        $rowLength = count($rows);
+        for( $i = 0; $i < $rowLength, $i++){
+            if($rows[$i] == "Yes"){
                 $arr_fee[0]++;
-            elseif($rows[$i] == "No")
+            }
+            elseif($rows[$i] == "No"){
                 $arr_fee[1]++;
+            }
             $arr_fee[2]++;
         }
     }
