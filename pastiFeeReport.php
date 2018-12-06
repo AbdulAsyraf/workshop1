@@ -11,6 +11,17 @@
     $arr_rows = [];
     while($rows = mysqli_fetch_array($result, MYSQLI_NUM)){
         $arr_rows[] = $rows;
+        
+        for ($x = 0; $x < 11; $x++){
+            if($arr_rows[$i] == "Yes"){
+                $arr_fee[0]++;
+            }
+            elseif($arr_rows[$i] == "No"){
+                $arr_fee[1]++;
+            }
+            $arr_fee[2]++;
+        }
+
         //$rowLength = count($rows);
         /*for( $i = 0; $i < $rowLength, $i++){
             if($rows[$i] == "Yes"){
@@ -24,10 +35,10 @@
     }
     print_r($arr_rows);
 
-    /*echo "Hi";
+    echo "Hi";
     echo $arr_fee[0];
     echo "Hi";
     echo $arr_fee[1];
     echo "Hi";
-    echo $arr_fee[2];*/
+    echo $arr_fee[2];
 ?>
