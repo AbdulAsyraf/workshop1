@@ -3,7 +3,7 @@
     require_once "../../configs/pastiConfig.php";
     
     $arr_fee = array(0, 0, 0);//[yes, no, total]
-    $sql = "SELECT january, february, march, april, may, june, juluy, august, september, october, november FROM fee;";
+    $sql = "SELECT january, february, march, april, may, june, july, august, september, october, november FROM fee;";
     $result = mysqli_query($link, $sql);
     $rows = mysqli_fetch_array($result);
     echo $rows[0];
