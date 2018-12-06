@@ -29,8 +29,8 @@
 
     echo "Paid fees: \t";
     echo $arr_fee[0];
-    echo "\nUnpaid fees: \t";
+    echo "<br>Unpaid fees: \t";
     echo $arr_fee[1];
-    echo "\nTotal: \t";
+    echo "<br>Total: \t";
     echo $arr_fee[2];
 ?>
