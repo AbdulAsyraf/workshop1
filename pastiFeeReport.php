@@ -12,7 +12,6 @@
     while($rows = mysqli_fetch_array($result, MYSQLI_NUM)){
         $arr_rows[] = $rows;
     }
-    echo sizeof($arr_rows);
     
     for ($x = 0; $x < sizeof($arr_rows); $x++){
         for($y = 0; $y < 11; $y++){
@@ -28,10 +27,10 @@
 
     //echo $arr_rows[0][2];
 
-    echo "Hi";
+    echo "Paid fees: \t";
     echo $arr_fee[0];
-    echo "Hi";
+    echo "\nUnpaid fees: \t";
     echo $arr_fee[1];
-    echo "Hi";
+    echo "\nTotal: \t";
     echo $arr_fee[2];
 ?>
