@@ -62,18 +62,19 @@
             }
             $arr_fee[2]++;
 
-            if($no_counter > $fee_warning_threshold){
-                $mykid = $arr_rows[$student][0];
-                $sql = "SELECT a.name, c.name1, c.phone1, c.name2, c.phone2 FROM student a, fee b, parentguardian c, users d WHERE b.mykid = a.mykid AND a.username = d.username AND d.username = c.username AND b.mykid = '" .$mykid. "';";
-                $result = mysqli_query($link, $sql);
-                $row = mysqli_fetch_array($result);
-                echo "<tr>";
-                for($i = 0; $i < 5; $i++){
-                    echo "<td>" .$row[$i]. "</td>";
-                }
-                echo "<td>" .$no_counter. "</td></tr>";
+            
             }
         }
+        if($no_counter > $fee_warning_threshold){
+            $mykid = $arr_rows[$student][0];
+            $sql = "SELECT a.name, c.name1, c.phone1, c.name2, c.phone2 FROM student a, fee b, parentguardian c, users d WHERE b.mykid = a.mykid AND a.username = d.username AND d.username = c.username AND b.mykid = '" .$mykid. "';";
+            $result = mysqli_query($link, $sql);
+            $row = mysqli_fetch_array($result);
+            echo "<tr>";
+            for($i = 0; $i < 5; $i++){
+                echo "<td>" .$row[$i]. "</td>";
+            }
+            echo "<td>" .$no_counter. "</td></tr>";
     }
     //echo $arr_rows[0][2];
     $percentage = ($arr_fee[1]/$arr_fee[2])*100;
