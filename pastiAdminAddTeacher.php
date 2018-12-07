@@ -12,14 +12,27 @@
     $username = $_SESSION["username"];
 
     if(isset($_POST["add"])){
-        $add = $_POST["choiceAdd"];
-        $sql = "UPDATE users SET usertype = 1 WHERE username = '".$add."';";
-        if(mysqli_query($link, $sql)){
-            unset($_POST["add"]);
-            header("location: pastiAdminAddTeacher.php");
-        }
-        else{
-            echo "Something went wrong. Please try again";
+        if(!empty($_POST["mykad"])){
+            $search = $_POST["mykad"];
+
+            $param_search = $search;
+
+            $sql = "SELECT username FROM users WHERE username = ?";
+            $stmt = mysqli_prepare($link, $sql);
+            mysqli_stmt_bind_param($stmt, "s", $param_search);
+            mysqli_stmt_execute($stmt);
+            mysqli_stmt_store_result($stmt);
+            if(mysqli_stmt_num_rows($stmt) == 1){
+                $add = $_POST["mykad"];
+                $sql = "UPDATE users SET usertype = 1 WHERE username = '".$add."';";
+                if(mysqli_query($link, $sql)){
+                    unset($_POST["add"]);
+                    header("location: pastiAdminAddTeacher.php");
+                }
+                else{
+                    echo "Something went wrong. Please try again";
+                }
+            }    
         }
     }
     elseif(isset($_POST["remove"])){
@@ -45,14 +58,16 @@
 </head>
 <body>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <label>MyKad :</label>
+        <p><input type="text" name="mykad" value="<?php echo $mykad; ?>"></p>
     <?php
-        $query = "SELECT username FROM users WHERE usertype = 0;";
+        /*$query = "SELECT username FROM users WHERE usertype = 0;";
         $result = mysqli_query($link, $query);
         while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
             echo "<input type='radio' name='choiceAdd' value='".$row['username']."'>".$row['username']."<br>\n";
         }
 
-        mysqli_free_result($result);
+        mysqli_free_result($result);*/
     ?>
         <p><input type="submit" name="add" value="Add teacher"></p>
     </form>
