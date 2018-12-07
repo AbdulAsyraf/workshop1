@@ -1,5 +1,7 @@
 <?php
 
+//Not used
+
 session_start();
 
 $username = $_SESSION["username"];
