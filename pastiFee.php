@@ -35,56 +35,67 @@
                     if($rows["november"] == "N/A"){
                         $sql = "UPDATE fee SET november = 'No' WHERE mykid = '" .$mykid. "';";
                         mysqli_query($link, $sql);
+                        break;
                     }
                 case 10:
                     if($rows["october"] == "N/A"){
                         $sql = "UPDATE fee SET october = 'No' WHERE mykid = '" .$mykid. "';";
                         mysqli_query($link, $sql);
+                        break;
                     }
                 case 9:
                     if($rows["september"] == "N/A"){
                         $sql = "UPDATE fee SET september = 'No' WHERE mykid = '" .$mykid. "';";
                         mysqli_query($link, $sql);
+                        break;
                     }
                 case 8:
                     if($rows["august"] == "N/A"){
                         $sql = "UPDATE fee SET august = 'No' WHERE mykid = '" .$mykid. "';";
                         mysqli_query($link, $sql);
+                        break;
                     }
                 case 7:
                     if($rows["july"] == "N/A"){
                         $sql = "UPDATE fee SET july = 'No' WHERE mykid = '" .$mykid. "';";
                         mysqli_query($link, $sql);
+                        break;
                     }
                 case 6:
                     if($rows["june"] == "N/A"){
                         $sql = "UPDATE fee SET june = 'No' WHERE mykid = '" .$mykid. "';";
                         mysqli_query($link, $sql);
+                        break;
                     }
                 case 5:
                     if($rows["may"] == "N/A"){
                         $sql = "UPDATE fee SET may = 'No' WHERE mykid = '" .$mykid. "';";
                         mysqli_query($link, $sql);
+                        break;
                     }
                 case 4:
                     if($rows["april"] == "N/A"){
                         $sql = "UPDATE fee SET april = 'No' WHERE mykid = '" .$mykid. "';";
                         mysqli_query($link, $sql);
+                        break;
                     }
                 case 3:
                     if($rows["march"] == "N/A"){
                         $sql = "UPDATE fee SET march = 'No' WHERE mykid = '" .$mykid. "';";
                         mysqli_query($link, $sql);
+                        break;
                     }
                 case 2:
                     if($rows["february"] == "N/A"){
                         $sql = "UPDATE fee SET february = 'No' WHERE mykid = '" .$mykid. "';";
                         mysqli_query($link, $sql);
+                        break;
                     }
                 case 1:
                     if($rows["january"] == "N/A"){
                         $sql = "UPDATE fee SET january = 'No' WHERE mykid = '" .$mykid. "';";
                         mysqli_query($link, $sql);
+                        break;
                     }
                     break;
             }

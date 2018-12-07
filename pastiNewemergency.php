@@ -71,7 +71,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <h2>Fill up</h2>
+        <h2>Emergency Contact Information</h2>
         <form action= "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($err_arr[0])) ? 'has-error' : ''; ?>">
                 <label>Name</label>

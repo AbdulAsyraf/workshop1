@@ -84,10 +84,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             }
 
             if(mysqli_stmt_execute($stmt)){
-                $sql = "INSERT INTO fee (mykid) VALUES (?)";
-                $stmt2 = mysqli_prepare($link, $sql);
-                mysqli_stmt_bind_param($stmt2, "s", $param_mykid);
-                mysqli_stmt_execute($stmt2);
                 header("location: pastiUserMain.php");
             }
             else{

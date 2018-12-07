@@ -103,7 +103,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <p>Please fill this form to create an account.</p>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method = "post">
         <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-            <label>IC Number</label>
+            <label>IC Number (This will be used as your username)</label>
             <input type="tel" name="username" class="form-control" maxlength="12" value="<?php echo $username; ?>">
             <span class="help-block"><?php echo $username_err; ?></span>
         </div>
