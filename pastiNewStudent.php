@@ -6,7 +6,8 @@ $username = $_SESSION["username"];
 
 require_once "../../configs/pastiConfig.php";
 
-$name = $dob = $mykid = $bc = $address = $illness = $allergy = "";
+$address = $_SESSION["address"];
+$name = $dob = $mykid = $bc = $illness = $allergy = "";
 $name_err = $dob_err = $mykid_err = $bc_err = $address_err = "";
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){

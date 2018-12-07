@@ -69,6 +69,7 @@ require_once "../../configs/pastiConfig.php";
         $query = "SELECT name1, mykad1, job1, phone1, name2, mykad2, job2, phone2, address FROM parentguardian WHERE username = '".$username."';";
         $result = mysqli_query($link, $query);
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+        $_SESSION["address"] = $rows["address"];
         ?>
         <p>Parents/Guardians</p>
         <p><input type="button" value="Edit Parent or Guardian Information" onclick="location='pastiEditparent.php'"/></p>
