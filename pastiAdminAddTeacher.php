@@ -22,6 +22,7 @@
             mysqli_stmt_bind_param($stmt, "s", $param_search);
             mysqli_stmt_execute($stmt);
             mysqli_stmt_store_result($stmt);
+
             if(mysqli_stmt_num_rows($stmt) == 1){
                 $add = $_POST["mykad"];
                 $sql = "UPDATE users SET usertype = 1 WHERE username = '".$add."';";
@@ -33,6 +34,9 @@
                     echo "Something went wrong. Please try again";
                 }
             }    
+        }
+        else{
+            echo "That user does not exist.";
         }
     }
     elseif(isset($_POST["remove"])){
