@@ -74,6 +74,10 @@ require_once "../../configs/pastiConfig.php";
         $sql = "UPDATE student SET status = 'Approved' WHERE mykid = '".$pick."';";
         if(mysqli_query($link, $sql)){
             unset($_POST["approval"]);
+            $sql = "INSERT INTO fee (mykid) VALUES (?)";
+            $stmt2 = mysqli_prepare($link, $sql);
+            mysqli_stmt_bind_param($stmt2, "s", $pick);
+            mysqli_stmt_execute($stmt2);
             header("location: pastiAdminApprove.php");
         }
         else{
