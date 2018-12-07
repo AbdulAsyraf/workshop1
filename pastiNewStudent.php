@@ -7,6 +7,7 @@ $username = $_SESSION["username"];
 require_once "../../configs/pastiConfig.php";
 
 $address = $_SESSION["address"];
+echo $address;
 $name = $dob = $mykid = $bc = $illness = $allergy = "";
 $name_err = $dob_err = $mykid_err = $bc_err = $address_err = "";
 
