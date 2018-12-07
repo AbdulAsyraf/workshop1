@@ -81,7 +81,7 @@
     $percentage = ($arr_fee[1]/$arr_fee[2])*100;
     if($percentage > 30)
         echo "Too much unpaid fees! Action is required";
-    echo "Paid fees: \tRM";
+    echo "<br>Paid fees: \tRM";
     echo $arr_fee[0]*110;
     echo "<br>Number of unpaid months: \t";
     echo $arr_fee[1];
