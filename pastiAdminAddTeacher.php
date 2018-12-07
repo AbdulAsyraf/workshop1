@@ -36,7 +36,7 @@
             }    
         }
         else{
-            echo "That user does not exist.";
+            $err = "That user does not exist";
         }
     }
     elseif(isset($_POST["remove"])){
@@ -62,8 +62,10 @@
 </head>
 <body>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <label>MyKad :</label>
-        <p><input type="text" name="mykad" value="<?php echo $mykad; ?>"></p>
+        <div class="form-group <?php echo (!empty($err)) ? 'has-error' : ''; ?>">
+            <label>MyKad :</label>
+            <input type="text" name="mykad" value="<?php echo $mykad; ?>">
+            <span class="help-block"><?php echo $err; ?></span>
     <?php
         /*$query = "SELECT username FROM users WHERE usertype = 0;";
         $result = mysqli_query($link, $query);
@@ -73,6 +75,7 @@
 
         mysqli_free_result($result);*/
     ?>
+        </div>
         <p><input type="submit" name="add" value="Add teacher"></p>
     </form>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
