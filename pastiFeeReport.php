@@ -77,6 +77,19 @@
             echo "<td>RM " .$amt_due. "</td></tr>";
         }
     }
+
+    $sqlnum4 = "SELECT mykid FROM students WHERE status = 'Approved' AND age = 4;";
+    $result_num4 = mysqli_query($link, $sqlnum4);
+    $num_stud4 = mysqli_num_rows($result_num4);
+
+    $sqlnum5 = "SELECT mykid FROM students WHERE status = 'Approved' AND age = 5;";
+    $result_num5 = mysqli_query($link, $sqlnum5);
+    $num_stud5 = mysqli_num_rows($result_num5);
+
+    $sqlnum6 = "SELECT mykid FROM students WHERE status = 'Approved' AND age = 6;";
+    $result_num6 = mysqli_query($link, $sqlnum6);
+    $num_stud6 = mysqli_num_rows($result_num6);
+
     //echo $arr_rows[0][2];
     $percentage = ($arr_fee[1]/$arr_fee[2])*100;
     if($percentage > 30)
@@ -85,6 +98,12 @@
     echo $arr_fee[0]*110;
     echo "<br>Number of unpaid months: \t";
     echo $arr_fee[1];
+    echo "<br>Number of 4 year old students: \t";
+    echo $num_stud4;
+    echo "<br>Number of 5 year old students: \t";
+    echo $num_stud5;
+    echo "<br>Number of 6 year old students: \t";
+    echo $num_stud6;
     //echo "<br>Total: \t";
     //echo $arr_fee[2];
     //echo "<br>Percentage of unpaid fees: \t";
