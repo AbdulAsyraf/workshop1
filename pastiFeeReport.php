@@ -47,6 +47,7 @@
                 <th>Mother/Guardian</th>
                 <th>Phone Number</th>
                 <th>Months Unpaid</th>
+                <th>Amount Due</th>
             </tr>
 
     <?php
@@ -71,19 +72,23 @@
             for($i = 0; $i < 5; $i++){
                 echo "<td>" .$row[$i]. "</td>";
             }
-            echo "<td>" .$no_counter. "</td></tr>";
+            $amt_due = $no_counter * 110;
+            echo "<td>" .$no_counter. "</td>";
+            echo "<td>RM " .$amt_due. "</td></tr>";
         }
     }
     //echo $arr_rows[0][2];
     $percentage = ($arr_fee[1]/$arr_fee[2])*100;
-    echo "Paid fees: \t";
+    if($percentage > 30)
+        echo "Too much unpaid fees! Action is required";
+    echo "Paid fees: \tRM";
     echo $arr_fee[0]*110;
     echo "<br>Number of unpaid months: \t";
     echo $arr_fee[1];
-    echo "<br>Total: \t";
-    echo $arr_fee[2];
-    echo "<br>Percentage of unpaid fees: \t";
-    echo $percentage;
+    //echo "<br>Total: \t";
+    //echo $arr_fee[2];
+    //echo "<br>Percentage of unpaid fees: \t";
+    //echo $percentage;
 ?>
 
 <p><input type="button" value="Back" onclick="location='pastiLogin.php'"></p>

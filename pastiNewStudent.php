@@ -119,42 +119,43 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method = "post">
         <div class="form-group <?php echo (!empty($name_err)) ? 'has-error' : ''; ?>">
             <label>Name</label>
-            <input type="text" name="name" class="form-control" value="<?php echo $name; ?>">
+            <input type="text" name="name" class="form-control" value="<?php echo $name; ?>">*
             <span class="help-block"><?php echo $name_err; ?></span>
         </div>
         <div class="form-group <?php echo (!empty($dob_err)) ? 'has-error' : ''; ?>">
             <label>Date of Birth</label>
-            <input type="date" name="dobinput" class="form-control" value="<?php echo $dobinput; ?>">
+            <input type="date" name="dobinput" class="form-control" value="<?php echo $dobinput; ?>">*
             <span class="help-block"><?php echo $dob_err; ?></span>
         </div>
         <div class="form-group <?php echo (!empty($mykid_err)) ? 'has-error' : ''; ?>">
             <label>MyKid</label>
-            <input type="text" name="mykid" class="form-control" maxlength="12" value="<?php echo $mykid; ?>">
+            <input type="text" name="mykid" class="form-control" maxlength="12" value="<?php echo $mykid; ?>">*
             <span class="help-block"><?php echo $mykid_err; ?></span>
         </div>
         <div class="form-group <?php echo (!empty($bc_err)) ? 'has-error' : ''; ?>">
             <label>Birth Certificate Number</label>
-            <input type="text" name="bc" class="form-control" value="<?php echo $bc; ?>">
+            <input type="text" name="bc" class="form-control" value="<?php echo $bc; ?>">*
             <span class="help-block"><?php echo $bc_err; ?></span>
         </div>
         <div class="form-group <?php echo (!empty($address_err)) ? 'has-error' : ''; ?>">
             <label>Address</label>
-            <input type="text" name="address" class="form-control" value="<?php echo $address; ?>">
+            <input type="text" name="address" class="form-control" value="<?php echo $address; ?>">*
             <span class="help-block"><?php echo $address_err; ?></span>
         </div>
         <div class="form-group">
-            <label>Illness (if any)</label>
-            <input type="text" name="illness" class="form-control" value="<?php echo $illness; ?>">
+            <label>Illness (put No if no illness)</label>
+            <input type="text" name="illness" class="form-control" value="<?php echo $illness; ?>">*
         </div>
         <div class="form-group">
-            <label>Allergies (if any)</label>
-            <input type="text" name="allergy" class="form-control" value="<?php echo $allergy; ?>">
+            <label>Allergies (put No if no allergies)</label>
+            <input type="text" name="allergy" class="form-control" value="<?php echo $allergy; ?>">*
         </div>
         <div class="form-group">
             <input type="submit" class="btn btn-primary" value="Submit">
             <input type="reset" class="btn btn-default" value="Reset">
         </div> 
     </form>
+        <p>* Denotes required fields</p>
         <input type="button" value="Back" onclick="location='pastiLogin.php'">
 </div>
 </body></html>
