@@ -61,9 +61,6 @@
                 $no_counter++;
             }
             $arr_fee[2]++;
-
-            
-            }
         }
         if($no_counter > $fee_warning_threshold){
             $mykid = $arr_rows[$student][0];
@@ -75,6 +72,7 @@
                 echo "<td>" .$row[$i]. "</td>";
             }
             echo "<td>" .$no_counter. "</td></tr>";
+        }
     }
     //echo $arr_rows[0][2];
     $percentage = ($arr_fee[1]/$arr_fee[2])*100;
