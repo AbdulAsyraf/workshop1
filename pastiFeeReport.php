@@ -13,8 +13,10 @@
 
     <?php
     
+    $fee_warning_threshold = 3;
+
     $arr_fee = array(0, 0, 0);//[yes, no, total]
-    $sql = "SELECT january, february, march, april, may, june, july, august, september, october, november FROM fee;";
+    $sql = "SELECT * FROM fee;";
     $result = mysqli_query($link, $sql);
     //$rows = mysqli_fetch_array($result, MYSQLI_NUM);
     //echo count($rows);*/
@@ -24,18 +26,55 @@
         $arr_rows[] = $rows;
     }
     
-    for ($x = 0; $x < sizeof($arr_rows); $x++){
-        for($y = 0; $y < 11; $y++){
-            if($arr_rows[$x][$y] == "Yes"){
+    for ($student = 0; $student < sizeof($arr_rows); $student++){
+        for($month = 1; $month < 12; $month++){
+            if($arr_rows[$student][$month] == "Yes"){
                 $arr_fee[0]++;
             }
-            elseif($arr_rows[$x][$y] == "No"){
+            elseif($arr_rows[$student][$month] == "No"){
                 $arr_fee[1]++;
             }
             $arr_fee[2]++;
         }
-    }
+    }    
+    ?>
 
+        <table border="1">
+            <tr>
+                <th>Student</th>
+                <th>Father/Guardian</th>
+                <th>Phone Number</th>
+                <th>Mother/Guardian</th>
+                <th>Phone Number</th>
+                <th>Months Unpaid</th>
+            </tr>
+
+    <?php
+    for ($student = 0; $student < sizeof($arr_rows); $student++){
+        $no_counter = 0;
+        for($month = 1; $month < 12; $month++){
+            if($arr_rows[$student][$month] == "Yes"){
+                $arr_fee[0]++;
+            }
+            elseif($arr_rows[$student][$month] == "No"){
+                $arr_fee[1]++;
+                $no_counter++;
+            }
+            $arr_fee[2]++;
+
+            if($no_counter > $fee_warning_threshold){
+                $mykid = $arr_rows[$student][0];
+                $sql = "SELECT a.name, c.name1, c.phone1, c.name2, c.phone2 FROM student a, fee b, parentguardian c, users d WHERE b.mykid = a.mykid AND a.username = d.username AND d.username = c.username AND b.mykid = '" .$mykid. "';";
+                $result = mysqli_query($link, $sql);
+                $row = mysqli_fetch_array($result);
+                echo "<tr>";
+                for($i = 0; $i < 5; $i++){
+                    echo "<td>" .$row[$i]. "</td>";
+                }
+                echo "<td>" .$no_counter. "</td></tr>";
+            }
+        }
+    }
     //echo $arr_rows[0][2];
     $percentage = ($arr_fee[1]/$arr_fee[2])*100;
     echo "Paid fees: \t";
