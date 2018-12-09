@@ -125,6 +125,9 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+<div class="page-header">
+        <h1><b>Search Student<b></h1>
+    </div>
     <form action="<?php echo htmlspecialchars($_POST['PHP_SELF']); ?>" method="post">
     <div class="form-group">
         <label>Search</label>

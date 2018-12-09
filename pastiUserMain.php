@@ -19,12 +19,12 @@ require_once "../../configs/pastiConfig.php";
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>New Application</title>
+    <title>Main Page</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <div class="page-header">
-        <h1>Hi user <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>.</h1>
+        <h1>Hi <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>.</h1>
     </div>
     <?php
         $username = $_SESSION["username"];

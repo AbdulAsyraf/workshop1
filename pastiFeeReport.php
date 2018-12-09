@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Fee report</title>
+    <title>Report</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>

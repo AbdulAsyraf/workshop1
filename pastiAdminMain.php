@@ -21,7 +21,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || $_SESSION[
 </head>
 <body>
     <div class="page-header">
-        <h1>Hi admin <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>.</h1>
+        <h1>Hi <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>.</h1>
     </div>
     
 

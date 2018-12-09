@@ -63,6 +63,9 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+    <div class="page-header">
+        <h1><b>Add Teacher<b></h1>
+    </div>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <div class="form-group <?php echo (!empty($err)) ? 'has-error' : ''; ?>">
             <label>MyKad :</label>

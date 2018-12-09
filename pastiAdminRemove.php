@@ -15,10 +15,13 @@ require_once "../../configs/pastiConfig.php";
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>New Application</title>
+    <title>Remove Student</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+<div class="page-header">
+        <h1><b>Remove Student<b></h1>
+    </div>
     <?php
 
         $query = "SELECT a.mykid, a.name, a.dob, a.bc,  a.address, a.illness, a.allergy, a.age, a.status, b.name1, b.mykad1, b.job1, b.phone1, b.name2, b.mykad2, b.job2, b.phone2, b.address AS address2 FROM student a, parentguardian b WHERE a.username = b.username;";

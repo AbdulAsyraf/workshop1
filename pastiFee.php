@@ -38,6 +38,9 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+<div class="page-header">
+        <h1><b>Fee Payment<b></h1>
+    </div>
     <?php
         $now = date("n");
         $sql = "SELECT a.name, a.mykid AS mykid, b.name1, b.phone1, b.name2, b.phone2, c.* FROM student a, parentguardian b, fee c WHERE a.username = b.username AND a.mykid = c.mykid;";

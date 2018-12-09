@@ -26,12 +26,12 @@ $classage = $row["classage"];
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>New Application</title>
+    <title>Main Page</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <div class="pageheader">
-        <h1>Hi teacher <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>.</h1>
+        <h1>Hi <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>.</h1>
     </div>
     <?php
 
