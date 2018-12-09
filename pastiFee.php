@@ -13,16 +13,17 @@
         $result = mysqli_query($link, $sql);
         $row = mysqli_fetch_array($result);
         $test = $row[0];
+        echo $_POST["what"];
 
         if($usertype == 1){
             if($test != "N/A"){
-                $query = "UPDATE fee SET '" .$month. "'' = 'Yes' WHERE mykid = '" .$mykid. "';";
+                $query = "UPDATE fee SET '" .$month. "' = 'Yes' WHERE mykid = '" .$mykid. "';";
                 mysqli_query($link, $query);
             }
         }
         elseif($usertype == 2){
             $what = $_POST["what"];
-            $query = "UPDATE fee SET '" .$month. "' = '" .$what. "' WHERE mykid = '" .$mykid. "';";
+            $query = "UPDATE fee SET '$month' = '$what' WHERE mykid = '" .$mykid. "';";
             mysqli_query($link, $query);
         }
         header("location: pastiFee.php");
@@ -250,9 +251,9 @@
                     echo "<p><input type='submit' value='Confirm Payment' class='btn btn-primary'></p>";
                 elseif($usertype == 2){
                     echo "<p><select name = 'what'>
-                            <option value = 'N/A'>N/A</option>
-                            <option value = 'No'>No</option>
-                            <option value = 'Yes'>Yes</option>
+                            <option value='N/A'>N/A</option>
+                            <option value='No'>No</option>
+                            <option value='Yes'>Yes</option>
                         </select></p>
                         <p><input type = 'submit' value = 'Ok' class = 'btn btn-primary'></p>";
                 }
