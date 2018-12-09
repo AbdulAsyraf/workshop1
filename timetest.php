@@ -18,7 +18,7 @@
             if($rows["month"] < 7)
                 echo "<td>" . $rows["year"] . "</td>";
             else{
-                $year = $row["year"] + 1;
+                $year = $rows["year"] + 1;
                 echo "<td>" . $year . "</td>";
             }
         echo "</tr>";
