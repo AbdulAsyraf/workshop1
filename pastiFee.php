@@ -9,7 +9,7 @@
         $mykid = $_POST["who"];
         $month = $_POST["when"];
         //$status = $_POST["status"];
-        $sql = "SELECT '" .$month. "' FROM fee WHERE mykid = '" .$mykid. "';";
+        $sql = "SELECT " .$month. " FROM fee WHERE mykid = '" .$mykid. "';";
         $result = mysqli_query($link, $sql);
         $row = mysqli_fetch_array($result);
         $test = $row[0];
@@ -17,13 +17,13 @@
 
         if($usertype == 1){
             if($test != "N/A"){
-                $query = "UPDATE fee SET '" .$month. "' = 'Yes' WHERE mykid = '" .$mykid. "';";
+                $query = "UPDATE fee SET " .$month. " = 'Yes' WHERE mykid = '" .$mykid. "';";
                 mysqli_query($link, $query);
             }
         }
         elseif($usertype == 2){
             $what = $_POST["what"];
-            $query = "UPDATE fee SET '" .$month. "' = '" .$what. "' WHERE mykid = '" .$mykid. "';";
+            $query = "UPDATE fee SET " .$month. " = '" .$what. "' WHERE mykid = '" .$mykid. "';";
             mysqli_query($link, $query);
         }
         //header("location: pastiFee.php");
