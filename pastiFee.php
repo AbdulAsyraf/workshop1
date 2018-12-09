@@ -23,7 +23,7 @@
         }
         elseif($usertype == 2){
             $what = $_POST["what"];
-            $query = "UPDATE fee SET '$month' = '$what' WHERE mykid = '" .$mykid. "';";
+            $query = "UPDATE fee SET '" .$month. "' = '" .$what. "' WHERE mykid = '" .$mykid. "';";
             mysqli_query($link, $query);
         }
         //header("location: pastiFee.php");
