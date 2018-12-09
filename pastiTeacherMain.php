@@ -13,7 +13,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || $_SESSION[
 require_once "../../configs/pastiConfig.php";
 
 $curr_year =  new Datetime(date("Y-m-d"));
-$curr_year = $curr_year->format('y');
+$curr_year = $curr_year->format('Y');
 $user = $_SESSION["username"];
 $sql = "SELECT classage from teacher WHERE username = '$user';";
 $result = mysqli_query($link, $sql);
