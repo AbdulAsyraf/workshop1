@@ -7,7 +7,6 @@ $username = $_SESSION["username"];
 require_once "../../configs/pastiConfig.php";
 
 $address = $_SESSION["address"];
-echo $address;
 $name = $dob = $mykid = $bc = $illness = $allergy = "";
 $name_err = $dob_err = $mykid_err = $bc_err = $address_err = "";
 
@@ -29,10 +28,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     $today = new Datetime(date("Y-m-d"));
+    $todaym = new Datetime(date("Y-m-d"));
     $bday = new Datetime($dob);
     $today = $today->format('y');
     $bday = $bday->format('y');
-    $month = $today->format('m');
+    $month = $todaym->format('m');
     if($month > 6)
         $age = $today - $bday + 1;
     else
