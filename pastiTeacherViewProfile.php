@@ -40,7 +40,7 @@
 </head>
 <body>
     <div class="page-header">
-        <h1><b>View Profile<b></h1>
+        <h1><b>View Profile</b></h1>
     </div>
     <?php
 

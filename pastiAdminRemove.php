@@ -20,7 +20,7 @@ require_once "../../configs/pastiConfig.php";
 </head>
 <body>
 <div class="page-header">
-        <h1><b>Remove Student<b></h1>
+        <h1><b>Remove Student</b></h1>
     </div>
     <?php
 

@@ -39,7 +39,7 @@
 </head>
 <body>
 <div class="page-header">
-        <h1><b>Fee Payment<b></h1>
+        <h1><b>Fee Payment</b></h1>
     </div>
     <?php
         $now = date("n");
