@@ -99,8 +99,8 @@
         echo "Too much unpaid fees! Action is required";
     echo "<br>Paid fees: \tRM";
     echo $arr_fee[0]*110;
-    echo "<br>Number of unpaid months: \t";
-    echo $arr_fee[1];
+    echo "<br>Unpaid fees: \tRM";
+    echo $arr_fee[1]*100;
     echo "<br>Number of 4 year old students: \t";
     echo $num_stud4;
     echo "<br>Number of 5 year old students: \t";
