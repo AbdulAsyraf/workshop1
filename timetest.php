@@ -15,7 +15,10 @@
         echo "<tr>";
             echo "<td>" . $rows["name"] . "</td>";
             echo "<td>" . $rows["month"] . "</td>";
-            echo "<td>" . $rows["year"] . "</td>";
+            if($rows["month"] < 7)
+                echo "<td>" . $rows["year"] . "</td>";
+            else
+                echo "<td>" . $rows["year"] + 1 . "</td>";
         echo "</tr>";
     }
     echo "</table>";
