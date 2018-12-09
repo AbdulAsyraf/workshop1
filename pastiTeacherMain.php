@@ -24,7 +24,7 @@ require_once "../../configs/pastiConfig.php";
     </div>
     <?php
 
-        $query = "SELECT a.mykid, a.name, a.dob, a.bc,  a.address, a.illness, a.allergy, a.age, b.name1, b.mykad1, b.job1, b.phone1, b.name2, b.mykad2, b.job2, b.phone2, b.address AS address2 FROM student a, parentguardian b WHERE a.username = b.username;";
+        $query = "SELECT a.mykid, a.name, a.dob, a.bc,  a.address, a.illness, a.allergy, a.age, b.name1, b.mykad1, b.job1, b.phone1, b.name2, b.mykad2, b.job2, b.phone2, b.address AS address2, c.classage FROM student a, parentguardian b, teacher c WHERE a.username = b.username AND a.age = c.classage;";
         $result = mysqli_query($link, $query);
 
         echo "<table border='1'>";
