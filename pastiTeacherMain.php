@@ -19,8 +19,6 @@ $sql = "SELECT classage from teacher WHERE username = '$user';";
 $result = mysqli_query($link, $sql);
 $row = mysqli_fetch_array($result);
 $classage = $row["classage"];
-echo $classage;
-echo $curr_year;
 
 ?>
 

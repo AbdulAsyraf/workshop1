@@ -8,9 +8,15 @@
         $mykid = $_POST["who"];
         $month = $_POST["when"];
         //$status = $_POST["status"];
+        $sql = "SELECT '$month' FROM fee WHERE mykid = '$mykid';";
+        $result = mysqli_query($link, $sql);
+        $row = mysqli_fetch_array($result);
+        $test = $row[0];
 
-        $query = "UPDATE fee SET " .$month. " = 'Yes' WHERE mykid = '" .$mykid. "';";
-        mysqli_query($link, $query);
+        if($test != "N/A"){
+            $query = "UPDATE fee SET " .$month. " = 'Yes' WHERE mykid = '" .$mykid. "';";
+            mysqli_query($link, $query);
+        }
         header("location: pastiFee.php");
     }
 
