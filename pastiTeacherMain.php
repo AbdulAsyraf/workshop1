@@ -8,10 +8,18 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || $_SESSION[
     exit;
 }
 
-$curr_year =  new Datetime(date("Y-m-d"));
-$curr_year = $curr_year->format('y');
+
 
 require_once "../../configs/pastiConfig.php";
+
+$curr_year =  new Datetime(date("Y-m-d"));
+$curr_year = $curr_year->format('y');
+$user = $_SESSION["username"];
+$sql = "SELECT classage from teacher WHERE username = '$user';";
+$result = mysqli_query($link, $sql);
+$row = mysqli_fetch_array($result);
+$classage = $row["classage"];
+
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +35,7 @@ require_once "../../configs/pastiConfig.php";
     </div>
     <?php
 
-        $query = "SELECT a.mykid, a.name, a.dob, a.bc,  a.address, a.illness, a.allergy, a.age, YEAR(a.applicationdate) AS year, b.name1, b.mykad1, b.job1, b.phone1, b.name2, b.mykad2, b.job2, b.phone2, b.address AS address2, c.classage FROM student a, parentguardian b, teacher c WHERE a.username = b.username AND a.age = c.classage AND year = '$curr_year';";
+        $query = "SELECT a.mykid, a.name, a.dob, a.bc,  a.address, a.illness, a.allergy, a.age, YEAR(a.applicationdate) AS year, b.name1, b.mykad1, b.job1, b.phone1, b.name2, b.mykad2, b.job2, b.phone2, b.address AS address2 FROM student a, parentguardian b WHERE a.username = b.username AND a.age = '$classage' AND year = '$curr_year';";
         $result = mysqli_query($link, $query);
 
         echo "<table border='1'>";
