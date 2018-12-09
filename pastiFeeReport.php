@@ -10,6 +10,9 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+    <div class="page-header">
+        <h1><b>Report for PASTI</b></h1>
+    </div>
 
     <?php
     
@@ -78,15 +81,15 @@
         }
     }
 
-    $sqlnum4 = "SELECT mykid FROM students WHERE status = 'Approved' AND age = 4;";
+    $sqlnum4 = "SELECT mykid FROM student WHERE status = 'Approved' AND age = 4;";
     $result_num4 = mysqli_query($link, $sqlnum4);
     $num_stud4 = mysqli_num_rows($result_num4);
 
-    $sqlnum5 = "SELECT mykid FROM students WHERE status = 'Approved' AND age = 5;";
+    $sqlnum5 = "SELECT mykid FROM student WHERE status = 'Approved' AND age = 5;";
     $result_num5 = mysqli_query($link, $sqlnum5);
     $num_stud5 = mysqli_num_rows($result_num5);
 
-    $sqlnum6 = "SELECT mykid FROM students WHERE status = 'Approved' AND age = 6;";
+    $sqlnum6 = "SELECT mykid FROM student WHERE status = 'Approved' AND age = 6;";
     $result_num6 = mysqli_query($link, $sqlnum6);
     $num_stud6 = mysqli_num_rows($result_num6);
 
