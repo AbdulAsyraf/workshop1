@@ -32,7 +32,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $bday = new Datetime($dob);
     $today = $today->format('y');
     $bday = $bday->format('y');
-    $age = $today - $bday;
+    $month = $today->format('m');
+    if($month > 6)
+        $age = $today - $bday + 1;
+    else
+        $age = $today - $bday;
 
     if(empty(trim($_POST["mykid"]))){
         $mykid_err = "Please enter student's MyKid number";
