@@ -14,7 +14,7 @@
     if(isset($_POST["add"])){
         if(!empty($_POST["mykad"])){
             $search = $_POST["mykad"];
-
+            $age = $_POST["class"];
             $param_search = $search;
 
             $sql = "SELECT username FROM users WHERE username = ?";
@@ -28,6 +28,8 @@
                 $sql = "UPDATE users SET usertype = 1 WHERE username = '".$add."';";
                 if(mysqli_query($link, $sql)){
                     unset($_POST["add"]);
+                    $sql = "INSERT INTO teacher (username, classage) VALUES ('" .$add. "', " .$age. ");";
+                    mysqli_query($link, $sql);
                     header("location: pastiAdminAddTeacher.php");
                 }
                 else{
@@ -76,6 +78,13 @@
         mysqli_free_result($result);*/
     ?>
         </div>
+        <div class="form-group">
+            <p><select name="class">
+                <option disabled selected value> --Select a class-- </option>
+                <option value = 4>4</option>
+                <option value = 5>5</option>
+                <option value = 6>6</option>
+            </select></p>
         <p><input type="submit" name="add" value="Add teacher"></p>
     </form>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">

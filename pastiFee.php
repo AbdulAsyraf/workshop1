@@ -13,7 +13,6 @@
         $result = mysqli_query($link, $sql);
         $row = mysqli_fetch_array($result);
         $test = $row[0];
-        echo $_POST["what"];
 
         if($usertype == 1){
             if($test != "N/A"){
@@ -26,7 +25,7 @@
             $query = "UPDATE fee SET " .$month. " = '" .$what. "' WHERE mykid = '" .$mykid. "';";
             mysqli_query($link, $query);
         }
-        //header("location: pastiFee.php");
+        header("location: pastiFee.php");
     }
 
 ?>
