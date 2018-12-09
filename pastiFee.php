@@ -26,7 +26,7 @@
             $query = "UPDATE fee SET '$month' = '$what' WHERE mykid = '" .$mykid. "';";
             mysqli_query($link, $query);
         }
-        header("location: pastiFee.php");
+        //header("location: pastiFee.php");
     }
 
 ?>
