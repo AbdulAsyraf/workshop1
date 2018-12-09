@@ -8,7 +8,7 @@
         $mykid = $_POST["who"];
         $month = $_POST["when"];
         //$status = $_POST["status"];
-        $sql = "SELECT '$month' FROM fee WHERE mykid = '$mykid';";
+        $sql = "SELECT '" .$month. "' FROM fee WHERE mykid = '" .$mykid. "';";
         $result = mysqli_query($link, $sql);
         $row = mysqli_fetch_array($result);
         $test = $row[0];
@@ -37,7 +37,7 @@
         while($rows = mysqli_fetch_array($result, MYSQLI_ASSOC)){
             $mykid = $rows["mykid"];
             switch($now){
-                case 11: default:
+                case 11:
                     if($rows["november"] == "N/A"){
                         $sql = "UPDATE fee SET november = 'No' WHERE mykid = '" .$mykid. "';";
                         mysqli_query($link, $sql);
@@ -103,7 +103,6 @@
                         mysqli_query($link, $sql);
                         break;
                     }
-                    break;
             }
         }
         $sql = "SELECT a.name, a.mykid AS mykid, b.name1, b.phone1, b.name2, b.phone2, c.* FROM student a, parentguardian b, fee c WHERE a.username = b.username AND a.mykid = c.mykid;";
