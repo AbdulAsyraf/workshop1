@@ -2,7 +2,7 @@
 
     require_once "../../configs/pastiConfig.php";
 
-    $sql = "SELECT name, MONTH(applicationdate) as month, YEAR(applicationdate) as year FROM students;";
+    $sql = "SELECT name, MONTH(applicationdate) as month, YEAR(applicationdate) as year FROM student;";
     $result = mysqli_query($link, $sql);
 
     echo "<table border='0'>
