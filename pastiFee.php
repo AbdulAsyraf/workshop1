@@ -2,6 +2,7 @@
 
     session_start();
 
+    $usertype = $_SESSION["usertype"];
     require_once "../../configs/pastiConfig.php";
 
     if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -13,8 +14,15 @@
         $row = mysqli_fetch_array($result);
         $test = $row[0];
 
-        if($test != "N/A"){
-            $query = "UPDATE fee SET " .$month. " = 'Yes' WHERE mykid = '" .$mykid. "';";
+        if($usertype == 1){
+            if($test != "N/A"){
+                $query = "UPDATE fee SET '" .$month. "'' = 'Yes' WHERE mykid = '" .$mykid. "';";
+                mysqli_query($link, $query);
+            }
+        }
+        elseif($usertype == 2){
+            $what = $_POST["what"];
+            $query = "UPDATE fee SET '" .$month. "' = '" .$what. "' WHERE mykid = '" .$mykid. "';";
             mysqli_query($link, $query);
         }
         header("location: pastiFee.php");
@@ -236,7 +244,20 @@
             <!--p><select name="status"-->
                 <!--<option value="No">No</option>
                 <option value="Yes">Yes</option>-->
-                <p><input type="submit" value="Confirm Payment" class="btn btn-primary"></p>
+            <?php
+            
+                if($usertype == 1)
+                    echo "<p><input type='submit' value='Confirm Payment' class='btn btn-primary'></p>";
+                elseif($usertype == 2){
+                    echo "<p><select name = 'what'>
+                            <option value = 'N/A'>N/A</option>
+                            <option value = 'No'>No</option>
+                            <option value = 'Yes'>Yes</option>
+                        </select></p>
+                        <p><input type = 'submit' value = 'Ok' class = 'btn btn-primary'></p>";
+                }
+            
+            ?>
             <!--/select></p-->
         </div>
 
