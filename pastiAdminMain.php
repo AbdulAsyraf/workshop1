@@ -36,7 +36,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || $_SESSION[
     <p><input type="button" value="Remove Students" onclick="location='pastiAdminRemove.php'">
     <p><input type="button" value="Add/Remove Teacher" onclick="location='pastiAdminAddTeacher.php'">
     <p><input type="button" value="Fee Payment" onclick="location='pastiFee.php'">
-    <p><input type="button" value="Fee Report" onclick="location='pastiFeeReport.php'">
+    <p><input type="button" value="Report" onclick="location='pastiFeeReport.php'">
     <p><input type="button" value="View Students" onclick="location='pastiSearch.php'">
     <p><input type="button" value="Sign Out" onclick="location='pastiLogout.php'" class="btn btn-danger"></p>
 </body>
