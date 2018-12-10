@@ -38,10 +38,10 @@
         }
 
         if(empty($err_arr)){
-            $sql = "INSERT INTO teacher (username, name, mykad, address, phone) values (?, ?, ?, ?, ?)";
+            $sql = "UPDATE teacher SET name =?, mykad =?, address=?, phone=?";
 
             if($stmt = mysqli_prepare($link, $sql)){
-                mysqli_stmt_bind_param($stmt, "sssss", $username, $param_name, $param_mykad, $param_address, $param_phone);
+                mysqli_stmt_bind_param($stmt, "ssss", $param_name, $param_mykad, $param_address, $param_phone);
 
                 $param_name = $name;
                 $param_mykad = $mykad;
